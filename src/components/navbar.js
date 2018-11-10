@@ -13,7 +13,7 @@ export default class Navbar extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Segment id='segment' style={{minHeight: '40px'}} inverted>
+      <Segment id='segment' style={{minHeight: '40px', marginBottom: '0', borderRadius: '0'}} inverted>
         <Menu inverted pointing secondary>
           <Menu.Item 
             active={activeItem === 'home'} 
