@@ -6,14 +6,16 @@ import EventNew from './components/event_new';
 import Navbar from './components/navbar';
 import Slideshow from './components/slideshow/slideshow';
 
-
+import {images as data_images} from './data/data_images'
+import EventList from './containers/EventList';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <Slideshow />
+        {/* <Slideshow images={data_images}/> */}
+        <EventList />
         <Switch>
           <Route path='/new' component={EventNew} />
         </Switch>

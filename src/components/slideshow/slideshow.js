@@ -11,12 +11,6 @@ export default class Slideshow extends Component {
     super(props)
 
     this.state = {
-      images: [
-        "https://source.unsplash.com/user/erondu/1600x900",
-        "https://source.unsplash.com/collection/190727/1600x900",
-        "https://source.unsplash.com/daily",
-        "https://source.unsplash.com/1600x900/?nature,water"
-      ],
       currentIndex: 0,
       translateValue: 0
     }
@@ -31,16 +25,16 @@ export default class Slideshow extends Component {
 	goToNextSlide() {
 		clearInterval(this.state.timeId)
 		const timeId = setInterval(this.goToNextSlide.bind(this), 7000)
-		this.setState((prevState) => ({ currentIndex: (prevState.currentIndex + 1) % prevState.images.length, timeId: timeId }))
+		this.setState((prevState) => ({ currentIndex: (prevState.currentIndex + 1) % this.props.images.length, timeId: timeId }))
 	}
 	goToPrevSlide() {
 		clearTimeout(this.state.timeId)
 		const timeId = setInterval(this.goToNextSlide.bind(this), 7000)
 		this.setState((prevState) => {
 			if(prevState.currentIndex === 0) {
-				return ({ currentIndex: prevState.images.length - 1})
+				return ({ currentIndex: this.props.images.length - 1})
 			}
-			return ({ currentIndex: ((prevState.currentIndex - 1) % prevState.images.length), timeId: timeId }) 
+			return ({ currentIndex: ((prevState.currentIndex - 1) % this.props.images.length), timeId: timeId }) 
 		})
 		
 	}
@@ -56,11 +50,11 @@ export default class Slideshow extends Component {
     return (
       <div className={cssModules.slideshow}>
 				<img className={cssModules.prev} src={arrow_left} onClick={this.goToPrevSlide.bind(this)}></img>
-				<Slide image={this.state.images[Math.abs(this.state.currentIndex)]} />
+				<Slide image={this.props.images[Math.abs(this.state.currentIndex)]} />
 				<img className={cssModules.next} src={arrow_right} onClick={this.goToNextSlide.bind(this)}></img>
 				
 				<Segment style={{marginTop: 0, borderRadius: 0}} inverted>
-					{this.state.images.map((a, i) => 
+					{this.props.images.map((a, i) => 
 						<div 
 							onClick={() => this.handleDotClicked(i)}
 							key={a} 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Menu, Segment, Button } from 'semantic-ui-react';
 import miu_svg from '../assets/miu.svg'
 
-
+// ? TODO: need a navnar for monbile version!
 export default class Navbar extends Component {
   state = {}
 
