@@ -6,7 +6,7 @@ import EventNew from './components/event_new';
 import Navbar from './components/navbar';
 import Slideshow from './components/slideshow/slideshow';
 
-import {images as data_images} from './data/data_images'
+import {images as data_images} from './data/data'
 import EventList from './containers/EventList';
 import ReduxTest from './containers/ReduxTest';
 
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <ReduxTest />
+        {/* <ReduxTest /> */}
         {/* <Slideshow images={data_images}/> */}
         <EventList />
         <Switch>
