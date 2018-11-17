@@ -7,6 +7,8 @@ const eventReducer = (state=initialState, actions) => {
       return state
     case LIKE_PLUS_ONE: 
       console.log(actions.payload)
+      // ! FIXME: EFFICIENCY! its better to change this into an object, 
+      // ! so dont have to interate through an array
       const result = state.map(i => {
         if(i.id === actions.payload) {
           i.interaction.likes ++

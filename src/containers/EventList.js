@@ -30,5 +30,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-
+// TODO: ? SHOULD i make past likePlusOne function here or in the eventBriefCard??
 export default connect(mapStateToProps, mapDispatchToProps)(EventList)
