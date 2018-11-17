@@ -12,7 +12,7 @@ export default class EventBriefCard extends Component {
     return (
       <div style={{border: '1px solid green', margin: '10px'}}>
         <div>
-          <button>Like?</button>
+          <button onClick={this.props.onLikeButtonClicked}>Like?</button>
         </div>
         <div>
           <img height='100px' src={imageURL}></img>
