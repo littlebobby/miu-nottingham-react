@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {images as imagesData} from '../../../data/data'
+import { imagesData } from '../../../data/data'
 import EventIconGroup from '../../event_icon_group/eventIconGroup';
 
 export default class EventBriefCard extends Component {
@@ -7,10 +7,13 @@ export default class EventBriefCard extends Component {
     super(props);
   }
   render() {
-    console.log(this.props.data)
+    // console.log(this.props.data)
     const { title, location, time, imageURL} = this.props.data.info
     return (
       <div style={{border: '1px solid green', margin: '10px'}}>
+        <div>
+          <button>Like?</button>
+        </div>
         <div>
           <img height='100px' src={imageURL}></img>
         </div>
