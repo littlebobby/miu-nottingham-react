@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { imagesData } from '../../../data/data'
 import EventIconGroup from '../../event_icon_group/eventIconGroup';
 
 export default class EventBriefCard extends Component {
-  constructor(props) {
-    super(props);
+
+  shouldComponentUpdate(nextProps) {
+    // console.log('this.props', this.props.data.interaction.likes);
+    // console.log('nextProps', nextProps.data.interaction.likes);
+    // !! do not check if two objects are the same or not
+    return this.props.data.interaction.likes !== nextProps.data.interaction.likes
   }
   render() {
-    // console.log(this.props.data)
+    console.log('event card UPDATED')
     const { title, location, time, imageURL} = this.props.data.info
     return (
       <div style={{border: '1px solid green', margin: '10px'}}>
@@ -15,7 +18,7 @@ export default class EventBriefCard extends Component {
           <button onClick={this.props.onLikeButtonClicked}>Like?</button>
         </div>
         <div>
-          <img height='100px' src={imageURL}></img>
+          <img alt='event' height='100px' src={imageURL}></img>
         </div>
         <div>
           <span>{title}</span>

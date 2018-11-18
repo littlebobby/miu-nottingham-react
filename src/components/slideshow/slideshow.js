@@ -49,9 +49,9 @@ export default class Slideshow extends Component {
 			console.log(this.state.currentIndex);
     return (
       <div className={cssModules.slideshow}>
-				<img className={cssModules.prev} src={arrow_left} onClick={this.goToPrevSlide.bind(this)}></img>
+				<img alt='arrow left' className={cssModules.prev} src={arrow_left} onClick={this.goToPrevSlide.bind(this)}></img>
 				<Slide image={this.props.images[Math.abs(this.state.currentIndex)]} />
-				<img className={cssModules.next} src={arrow_right} onClick={this.goToNextSlide.bind(this)}></img>
+				<img alt='arrow right' className={cssModules.next} src={arrow_right} onClick={this.goToNextSlide.bind(this)}></img>
 				
 				<Segment style={{marginTop: 0, borderRadius: 0}} inverted>
 					{this.props.images.map((a, i) => 

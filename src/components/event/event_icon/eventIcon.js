@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const EventIcon = ({ symbolURL, number=0 }) => {
   return (
     <div style={{height: '20px'}}>
-      <img height='100%' src={symbolURL}/>
+      <img alt='icon' height='100%' src={symbolURL}/>
       {' '}
       <span>{number}</span>
     </div>

@@ -4,14 +4,20 @@ import { connect } from 'react-redux'
 import { likePlusOne } from '../store/actions'
 
 class EventList extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   render() {
     console.log(this.props.events)
     return (
       <div>
-        {this.props.events.map(i => <EventBriefCard key={i.id} data={i} onLikeButtonClicked={() => this.props.likePlusOne(i.id)}/>)}
+        {this.props.events.map(i => 
+          <EventBriefCard 
+            key={i.id} 
+            data={i} 
+            onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
+          />
+        )}
         {/* <EventCard /> */}
 
       </div>
