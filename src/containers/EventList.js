@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import { likePlusOne } from '../store/actions'
 
 class EventList extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+
   render() {
     console.log(this.props.events)
     return (

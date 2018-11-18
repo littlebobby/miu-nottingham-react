@@ -6,14 +6,13 @@ const eventReducer = (state=initialState, actions) => {
     case EVENT_LIST:
       return state
     case LIKE_PLUS_ONE: 
-      
-      // console.log(actions.payload)
       // ! FIXME: EFFICIENCY! its better to change this into an object, 
       // ! so dont have to interate through an array
 
       // !!! note!! never try to mutate the original state!
       // !! objects are reference types!!
       // !! {...obj} only do a shawllo copy
+      // ? should i use lodash deepcopy()? cause json parse seems have some problems
       const result = JSON.parse(JSON.stringify(state))
       console.log('state', state)
       return result.map(i => {

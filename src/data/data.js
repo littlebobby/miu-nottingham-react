@@ -19,7 +19,8 @@ export const eventsData = [
       likes: 20,
       ducks: 15,
       comments: 20,
-    }
+    },
+    likedUser: [1, 2]
   },
   {
     id: 11,
@@ -34,7 +35,8 @@ export const eventsData = [
       likes: 15,
       ducks: 12,
       comments: 11,
-    }
+    },
+    likedUser: [2]
   },
   {
     id: 12,
@@ -49,6 +51,7 @@ export const eventsData = [
       likes: 120,
       ducks: 100,
       comments: 14,
-    }
+    },
+    likedUser: [3, 5]
   }
 ]

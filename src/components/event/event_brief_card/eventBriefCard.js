@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import EventIconGroup from '../../event_icon_group/eventIconGroup';
+import JoinedUserGroup from '../joined_user_group/joinedUserGroup'
 
 export default class EventBriefCard extends Component {
 
   shouldComponentUpdate(nextProps) {
-    // console.log('this.props', this.props.data.interaction.likes);
-    // console.log('nextProps', nextProps.data.interaction.likes);
     // !! do not check if two objects are the same or not
     return this.props.data.interaction.likes !== nextProps.data.interaction.likes
   }
@@ -31,6 +30,7 @@ export default class EventBriefCard extends Component {
           <button>Going?</button>
         </div>
         <EventIconGroup interaction={this.props.data.interaction}/>
+        <JoinedUserGroup />
       </div>
     )
   }
