@@ -30,7 +30,7 @@ export default class EventBriefCard extends Component {
           <button>Going?</button>
         </div>
         <EventIconGroup interaction={this.props.data.interaction}/>
-        <JoinedUserGroup />
+        <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
       </div>
     )
   }

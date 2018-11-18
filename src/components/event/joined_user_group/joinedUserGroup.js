@@ -1,11 +1,14 @@
 import React from 'react'
 import userData from '../../../data/user'
 
-export default function JoinedUserGroup() {
+export default function JoinedUserGroup({ joinedUsers }) {
   console.log(userData)
   return (
     <div>
-      {userData.map(i => <img key={i.id} src={`${i.picture}`} /> )}
+      {joinedUsers.map(i => {
+        console.log(i);
+        return <img key={userData[i-1].id} src={userData[i-1].picture} />
+      })}
     </div>
   )
 }

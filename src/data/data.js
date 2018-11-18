@@ -20,7 +20,8 @@ export const eventsData = [
       ducks: 15,
       comments: 20,
     },
-    likedUser: [1, 2]
+    joinedUsers: [1, 2],
+    likedUsers: [1, 2, 4]
   },
   {
     id: 11,
@@ -36,7 +37,8 @@ export const eventsData = [
       ducks: 12,
       comments: 11,
     },
-    likedUser: [2]
+    joinedUsers: [2, 5],
+    likedUsers: [2]
   },
   {
     id: 12,
@@ -52,6 +54,7 @@ export const eventsData = [
       ducks: 100,
       comments: 14,
     },
-    likedUser: [3, 5]
+    joinedUsers: [1, 4, 5],
+    likedUsers: [1, 2, 3, 5]
   }
 ]
