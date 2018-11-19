@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import EventIconGroup from '../../event_icon_group/eventIconGroup';
-import JoinedUserGroup from '../joined_user_group/joinedUserGroup'
+import JoinedUserGroup from '../joined_user_group/joinedUserGroup';
+import cssModules from './eventBriefCard.module.css'
+import likeSVG from '../../../assets/like.svg'
 
 export default class EventBriefCard extends Component {
 
@@ -12,12 +14,14 @@ export default class EventBriefCard extends Component {
     console.log('event card UPDATED')
     const { title, location, time, imageURL} = this.props.data.info
     return (
-      <div style={{border: '1px solid green', margin: '10px'}}>
-        <div>
-          <button onClick={this.props.onLikeButtonClicked}>Like?</button>
+      <div className={cssModules.card}>
+        <div className={cssModules.btnLikeBox}>
+          <button className={cssModules.btnLike} onClick={this.props.onLikeButtonClicked}>
+            <img className={cssModules.likeSVG} src={likeSVG} />
+          </button>
         </div>
-        <div>
-          <img alt='event' height='100px' src={imageURL}></img>
+        <div className={cssModules.imgBox}>
+          <img className={cssModules.img} alt='event' src={imageURL}></img>
         </div>
         <div>
           <span>{title}</span>
