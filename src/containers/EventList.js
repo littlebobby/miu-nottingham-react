@@ -3,12 +3,14 @@ import EventBriefCard from '../components/event/event_brief_card/eventBriefCard'
 import { connect } from 'react-redux'
 import { likePlusOne } from '../store/actions'
 
+import cssModules from './eventList.module.css'
+
 class EventList extends Component {
 
   render() {
     console.log(this.props.events)
     return (
-      <div>
+      <div className={cssModules.section}>
         {this.props.events.map(i => 
           <EventBriefCard 
             key={i.id} 

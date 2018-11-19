@@ -3,6 +3,7 @@ import EventIconGroup from '../../event_icon_group/eventIconGroup';
 import JoinedUserGroup from '../joined_user_group/joinedUserGroup';
 import cssModules from './eventBriefCard.module.css'
 import likeSVG from '../../../assets/like.svg'
+import duckSVG from '../../../assets/duck.svg'
 
 export default class EventBriefCard extends Component {
 
@@ -14,10 +15,10 @@ export default class EventBriefCard extends Component {
     console.log('event card UPDATED')
     const { title, location, time, imageURL} = this.props.data.info
     return (
-      <div>
+      <div className={cssModules.container}>
         <div className={cssModules.card}>
-          <div className={cssModules.btnLikeBox}>
-            <button className={cssModules.btnLike} onClick={this.props.onLikeButtonClicked}>
+          <div className={cssModules.likeBtnBox}>
+            <button className={cssModules.likeBtn} onClick={this.props.onLikeButtonClicked}>
               <img className={cssModules.likeSVG} src={likeSVG} />
             </button>
           </div>
@@ -34,12 +35,15 @@ export default class EventBriefCard extends Component {
             <span className={cssModules.title}>{title}</span>
             {/* <span>{location}</span> */}
           </div>
-          <div>
-            <button>Going?</button>
-          </div>
           <EventIconGroup interaction={this.props.data.interaction}/>
-          <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
+          <div className={cssModules.goingBox}>
+            <button className={cssModules.goingBtn}>
+              <img src={duckSVG} alt='going' />
+            </button>
+          </div>
+         
         </div>
+        <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
       </div>
     )
   }
