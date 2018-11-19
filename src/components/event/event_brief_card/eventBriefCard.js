@@ -20,13 +20,17 @@ export default class EventBriefCard extends Component {
             <img className={cssModules.likeSVG} src={likeSVG} />
           </button>
         </div>
+
         <div className={cssModules.imgBox}>
           <img className={cssModules.img} alt='event' src={imageURL}></img>
         </div>
+
+        <div className={cssModules.timeBox}>
+          <span className={cssModules.timeText}>{time}</span>
+        </div>
+
         <div>
           <span>{title}</span>
-          {' '}
-          <span>{time}</span>
           {' '}
           <span>{location}</span>
         </div>

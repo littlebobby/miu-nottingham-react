@@ -11,7 +11,7 @@ export const eventsData = [
     info: {
       imageURL: 'https://source.unsplash.com/user/erondu/1600x900',
       title: 'SCDA',
-      time: '16 Nov -> 18 Nov',
+      time: 'Nov 16',
       location: '苏州',
       beief: '一场与西浦学术的交流 一场自然与文化的盛宴 西浦一路 诚邀你我相伴 苏州之游 期待你的加入',
     },
@@ -28,7 +28,7 @@ export const eventsData = [
     info: {
       imageURL: 'https://source.unsplash.com/collection/190727/1600x900',
       title: '研究生毕业派对',
-      time: '10 NOV. ,SAT',
+      time: 'Nov 10',
       location: 'MN Coffee',
       beief: '想在毕业前再搞一次大事，追忆一下我们终将逝去的青春？那就果断来吧！',
     },
@@ -45,7 +45,7 @@ export const eventsData = [
     info: {
       imageURL: 'https://source.unsplash.com/daily',
       title: '卓贤汇',
-      time: '10 NOV. ,SAT',
+      time: 'Nov 10',
       location: 'Cender西餐厅',
       beief: '听说你跟朋友同桌吃饭。那么，我跟谁同桌吃饭？',
     },
