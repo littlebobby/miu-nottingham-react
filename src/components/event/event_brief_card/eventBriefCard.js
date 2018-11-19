@@ -14,31 +14,32 @@ export default class EventBriefCard extends Component {
     console.log('event card UPDATED')
     const { title, location, time, imageURL} = this.props.data.info
     return (
-      <div className={cssModules.card}>
-        <div className={cssModules.btnLikeBox}>
-          <button className={cssModules.btnLike} onClick={this.props.onLikeButtonClicked}>
-            <img className={cssModules.likeSVG} src={likeSVG} />
-          </button>
-        </div>
+      <div>
+        <div className={cssModules.card}>
+          <div className={cssModules.btnLikeBox}>
+            <button className={cssModules.btnLike} onClick={this.props.onLikeButtonClicked}>
+              <img className={cssModules.likeSVG} src={likeSVG} />
+            </button>
+          </div>
 
-        <div className={cssModules.imgBox}>
-          <img className={cssModules.img} alt='event' src={imageURL}></img>
-        </div>
+          <div className={cssModules.imgBox}>
+            <img className={cssModules.img} alt='event' src={imageURL}></img>
+          </div>
 
-        <div className={cssModules.timeBox}>
-          <span className={cssModules.timeText}>{time}</span>
-        </div>
+          <div className={cssModules.timeBox}>
+            <span className={cssModules.timeText}>{time}</span>
+          </div>
 
-        <div>
-          <span>{title}</span>
-          {' '}
-          <span>{location}</span>
+          <div className={cssModules.titleBox}>
+            <span className={cssModules.title}>{title}</span>
+            {/* <span>{location}</span> */}
+          </div>
+          <div>
+            <button>Going?</button>
+          </div>
+          <EventIconGroup interaction={this.props.data.interaction}/>
+          <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
         </div>
-        <div>
-          <button>Going?</button>
-        </div>
-        <EventIconGroup interaction={this.props.data.interaction}/>
-        <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
       </div>
     )
   }
