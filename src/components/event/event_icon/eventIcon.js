@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import icon_heart from '../../../assets/heart.svg'
-
+import cssModules from './eventIcon.module.css'
 
 const EventIcon = ({ symbolURL, number=0 }) => {
   return (
-    <div style={{height: '20px'}}>
-      <img alt='icon' height='100%' src={symbolURL}/>
+    <div className={cssModules.eventIcon}>
+      <img className={cssModules.icon} alt='icon' src={symbolURL}/>
       {' '}
-      <span>{number}</span>
+      <span className={cssModules.text}>{number}</span>
     </div>
   )
 }

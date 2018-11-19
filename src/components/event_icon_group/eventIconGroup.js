@@ -1,16 +1,18 @@
 import React from 'react'
 import EventIcon from '../event/event_icon/eventIcon';
 
-import icon_heart from '../../assets/heart.svg'
-import icon_comment from '../../assets/comment.svg'
-import icon_duck from '../../assets/duck.svg'
+import icon_views from '../../assets/views.svg'
+import icon_comments from '../../assets/comments.svg'
+import icon_likes from '../../assets/likes.svg'
+import cssModules from './eventIconGroup.module.css'
+
 const EventIconGroup = ({ interaction }) => {
   const { likes, ducks, comments } = interaction
   return (
-    <div>
-      <EventIcon symbolURL={icon_heart} number={likes}/>
-      <EventIcon symbolURL={icon_comment} number={comments} />
-      <EventIcon symbolURL={icon_duck} number={ducks}/>
+    <div className={cssModules.iconBox}>
+      <EventIcon symbolURL={icon_views} number={likes}/>
+      <EventIcon symbolURL={icon_comments} number={comments} />
+      <EventIcon symbolURL={icon_likes} number={ducks}/>
     </div>
   )
 }
