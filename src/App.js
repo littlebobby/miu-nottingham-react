@@ -7,9 +7,10 @@ import Slideshow from './components/slideshow/Slideshow';
 
 import {imagesData as data_images} from './data/data'
 import EventList from './containers/EventList';
-import SigninForm from './containers/signin/SigninForm';
 import Nav from './components/layout/Nav';
 import EventDetails from './components/event/event_detail.js/EventDetails';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 
 class App extends Component {
   render() {
@@ -19,7 +20,9 @@ class App extends Component {
         {/* <Navbar /> */}
         {/* <Slideshow images={data_images}/> */}
         <Switch>
-          <Route path='/signin' component={SigninForm} />
+          <Route path='/signin' component={SignIn} />
+          <Route path='/signup' component={SignUp} />
+
           <Route path='/new' component={EventNew} />
           <Route exact path='/' component={EventList} />
           <Route path='/event/:id' component={EventDetails} />
