@@ -6,9 +6,9 @@ import icon_comments from '../../assets/comments.svg'
 import icon_likes from '../../assets/likes.svg'
 import cssModules from './EventIconGroup.module.css'
 
-const EventIconGroup = ({ interaction }) => {
+const EventIconGroup = ({ interactions }) => {
   // TODO: only update the like number not the whole IconGroup
-  const { views, comments, likes } = interaction
+  const { views, comments, likes } = interactions
   return (
     <div className={cssModules.iconBox}>
       <EventIcon symbolURL={icon_views} number={views}/>

@@ -9,9 +9,10 @@ export default class EventBriefCard extends Component {
 
   shouldComponentUpdate(nextProps) {
     // !! do not check if two objects are the same or not
-    return this.props.data.interaction.likes !== nextProps.data.interaction.likes
+    return this.props.data.interactions.likes !== nextProps.data.interactions.likes
   }
   render() {
+    console.log(this.props.data.info)
     const { title, location, time, imageURL} = this.props.data.info
     return (
       <div className={cssModules.container}>
@@ -34,7 +35,7 @@ export default class EventBriefCard extends Component {
             <span className={cssModules.title}>{title}</span>
             {/* <span>{location}</span> */}
           </div>
-          <EventIconGroup interaction={this.props.data.interaction}/>
+          <EventIconGroup interactions={this.props.data.interactions}/>
           <div className={cssModules.goingBox}>
             <button className={cssModules.goingBtn}>
               <img src={duckSVG} alt='going' />

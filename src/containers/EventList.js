@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import EventBriefCard from '../components/event/event_brief_card/EventBriefCard';
 import { connect } from 'react-redux'
 import { likePlusOne } from '../store/actions/eventActions'
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux' // to connect two hoc 
 
 import cssModules from './EventList.module.css'
 
@@ -27,7 +29,8 @@ class EventList extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-  return {events: state.event}
+  console.log(state)
+  return { events: state.firestore.ordered.events }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -37,4 +40,9 @@ const mapDispatchToProps = dispatch => {
 }
 
 // TODO: ? SHOULD i make past likePlusOne function here or in the eventBriefCard??
-export default connect(mapStateToProps, mapDispatchToProps)(EventList)
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  firestoreConnect([
+    { collection: 'events' }
+  ])
+)(EventList)
