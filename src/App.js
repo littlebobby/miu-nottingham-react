@@ -10,22 +10,16 @@ import EventList from './containers/EventList';
 import SigninForm from './containers/signin/SigninForm';
 
 class App extends Component {
-  submit = values => {
-    values.preventDefault()
-    console.log(values);
-  }
   render() {
     return (
       <div className="App">
         <Navbar />
         {/* <Slideshow images={data_images}/> */}
-        <EventList />
-        <SigninForm handleSubmit={this.submit} />
         <Switch>
+          <Route path='/signin' component={SigninForm} />
           <Route path='/new' component={EventNew} />
+          <Route path='/' component={EventList} />
         </Switch>
-        {/* <Slideshow /> */}
-        {/* <EventNew /> */}
       </div>
     );
   }
