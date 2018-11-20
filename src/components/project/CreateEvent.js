@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import styles from './CreateEvent.module.css'
+import styles from './CreateEvent.module.css';
+import { connect } from 'react-redux';
+import { createEvent } from '../../store/actions/eventActions'
 
 
 class CreateEvent extends Component {
@@ -9,7 +11,7 @@ class CreateEvent extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    this.props.createEvent(this.state)
   }
   handleChange = (e) => {
     this.setState({[e.target.id]: e.target.value})
@@ -32,4 +34,11 @@ class CreateEvent extends Component {
   }
 } 
 
-export default CreateEvent;
+// ! dispatch actions to props 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createEvent: (event) => dispatch(createEvent(event))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreateEvent);

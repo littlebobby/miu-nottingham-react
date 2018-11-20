@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import EventBriefCard from '../components/event/event_brief_card/EventBriefCard';
 import { connect } from 'react-redux'
-import { likePlusOne } from '../store/actions'
+import { likePlusOne } from '../store/actions/eventActions'
 
 import cssModules from './EventList.module.css'
 
 class EventList extends Component {
+  
 
   render() {
+    console.log(this.props.events)
     const {events} = this.props
     return (
       <div className={cssModules.section}>
@@ -25,7 +27,6 @@ class EventList extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-  console.log(state.event);
   return {events: state.event}
 }
 

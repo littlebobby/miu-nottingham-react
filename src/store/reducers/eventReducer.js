@@ -1,11 +1,14 @@
 import { EVENT_LIST, LIKE_PLUS_ONE } from '../actions';
-import { eventsData } from '../data/data'
+import { eventsData } from '../../data/data'
 
 // ! reference 
 const initState = eventsData
 
-const eventReducer = (state=initState, actions) => {
-  switch(actions.type) {
+const eventReducer = (state=initState, action) => {
+  switch(action.type) {
+    case 'CREATE_EVENT':
+      console.log('create project', action.event);
+      return state
     case EVENT_LIST:
       return state
     case LIKE_PLUS_ONE: 
@@ -19,7 +22,7 @@ const eventReducer = (state=initState, actions) => {
       const result = JSON.parse(JSON.stringify(state))
       console.log('state', state)
       return result.map(i => {
-        if(i.id === actions.payload) {
+        if(i.id === action.payload) {
           i.interaction.likes ++
         }
         return i

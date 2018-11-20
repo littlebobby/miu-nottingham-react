@@ -11,9 +11,10 @@ import rootReducer from './store/reducers/rootReducer'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import thunk from 'redux-thunk'
 
 // const store = createStore(reducers)
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
 // store={store}

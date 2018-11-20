@@ -1,6 +1,6 @@
 
 import authReducer from './authReducer';
-import eventReducer from '../event_reducer';
+import eventReducer from './eventReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
