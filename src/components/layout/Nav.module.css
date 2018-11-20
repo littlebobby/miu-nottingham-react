@@ -1,0 +1,12 @@
+.nav {
+  background-color: #262626;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.a {
+  color: white;
+  text-decoration: none;
+}

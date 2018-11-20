@@ -8,12 +8,14 @@ import Slideshow from './components/slideshow/Slideshow';
 import {imagesData as data_images} from './data/data'
 import EventList from './containers/EventList';
 import SigninForm from './containers/signin/SigninForm';
+import Nav from './components/layout/Nav';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+      <Nav />
+        {/* <Navbar /> */}
         {/* <Slideshow images={data_images}/> */}
         <Switch>
           <Route path='/signin' component={SigninForm} />
