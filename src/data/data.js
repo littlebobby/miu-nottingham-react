@@ -16,9 +16,9 @@ export const eventsData = [
       beief: '一场与西浦学术的交流 一场自然与文化的盛宴 西浦一路 诚邀你我相伴 苏州之游 期待你的加入',
     },
     interaction: {
-      likes: 20,
-      ducks: 15,
+      views: 90,
       comments: 20,
+      likes: 40,
     },
     joinedUsers: [1, 2],
     likedUsers: [1, 2, 4]
@@ -33,9 +33,9 @@ export const eventsData = [
       beief: '想在毕业前再搞一次大事，追忆一下我们终将逝去的青春？那就果断来吧！',
     },
     interaction: {
-      likes: 15,
-      ducks: 12,
-      comments: 11,
+      views: 15,
+      comments: 2,
+      likes: 11,
     },
     joinedUsers: [2, 5],
     likedUsers: [2]
@@ -50,9 +50,9 @@ export const eventsData = [
       beief: '听说你跟朋友同桌吃饭。那么，我跟谁同桌吃饭？',
     },
     interaction: {
-      likes: 120,
-      ducks: 100,
-      comments: 14,
+      views: 200,
+      comments: 10,
+      likes: 140,
     },
     joinedUsers: [1, 4, 5],
     likedUsers: [1, 2, 3, 5]

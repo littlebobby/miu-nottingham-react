@@ -7,12 +7,12 @@ import icon_likes from '../../assets/likes.svg'
 import cssModules from './eventIconGroup.module.css'
 
 const EventIconGroup = ({ interaction }) => {
-  const { likes, ducks, comments } = interaction
+  const { views, comments, likes } = interaction
   return (
     <div className={cssModules.iconBox}>
-      <EventIcon symbolURL={icon_views} number={likes}/>
+      <EventIcon symbolURL={icon_views} number={views}/>
       <EventIcon symbolURL={icon_comments} number={comments} />
-      <EventIcon symbolURL={icon_likes} number={ducks}/>
+      <EventIcon symbolURL={icon_likes} number={likes}/>
     </div>
   )
 }
