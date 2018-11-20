@@ -1,15 +1,43 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux' // to connect two hoc 
 
-export default function EventDetail(props) {
-  // fetch the event id
-  const id = props.match.params.id
-  return (
-    <div>
+function EventDetail(props) {
+  const { event } = props
+  if (event) {
+    console.log(event) 
+    return (
       <div>
-        <span>Event Title - {id}</span>
-        <p>Lorem ashdofasdfoawenfoaweifhoa
-        </p>
+        <div>
+          <span>{event.info.title}</span>
+          <p>{event.info.brief}
+          </p>
+        </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return (
+      <div>
+        <p>Loading event...</p>
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id;
+  const events = state.firestore.data.events;
+  const event = events ? events[id] : null
+  console.log(event)
+  return { 
+    event
+  }
+}
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'events' }
+  ])
+)(EventDetail)

@@ -1,8 +1,6 @@
 import { EVENT_LIST, LIKE_PLUS_ONE } from '../actions';
-import { eventsData } from '../../data/data'
 
-// ! reference 
-const initState = eventsData
+const initState = {}
 
 const eventReducer = (state=initState, action) => {
   switch(action.type) {

@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
-import promise from 'redux-promise';
 // import reducers from './store/index'
 import rootReducer from './store/reducers/rootReducer'
 
@@ -18,7 +17,6 @@ import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import fbConfig from './config/fbConfig';
 
-// const store = createStore(reducers)
 // withExtraArgument allows actions to pass extra arguments 
 const store = createStore(rootReducer,
   compose(
