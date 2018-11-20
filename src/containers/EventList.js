@@ -8,9 +8,11 @@ import cssModules from './EventList.module.css'
 class EventList extends Component {
 
   render() {
+    const {events} = this.props
     return (
       <div className={cssModules.section}>
-        {this.props.eventList.map(i => 
+      {/* ! by adding events && prevents empty events */}
+        {events && events.map(i => 
           <EventBriefCard 
             key={i.id} 
             data={i} 
@@ -22,8 +24,9 @@ class EventList extends Component {
   }
 }
 
-const mapStateToProps = ({ eventList }) => {
-  return {eventList}
+const mapStateToProps = ( state ) => {
+  console.log(state.event);
+  return {events: state.event}
 }
 
 const mapDispatchToProps = dispatch => {
