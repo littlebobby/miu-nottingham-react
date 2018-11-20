@@ -11,6 +11,7 @@ import Nav from './components/layout/Nav';
 import EventDetails from './components/event/event_detail.js/EventDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
+import CreateEvent from './components/project/CreateEvent'
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
         <Switch>
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />
+          <Route path='/create' component={CreateEvent} />
 
           <Route path='/new' component={EventNew} />
           <Route exact path='/' component={EventList} />
