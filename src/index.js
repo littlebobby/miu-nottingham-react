@@ -5,20 +5,20 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import promise from 'redux-promise';
-import reducers from './store/index'
-
+// import reducers from './store/index'
+import rootReducer from './store/reducers/rootReducer'
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // const store = createStore(reducers)
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const store = createStore(rootReducer);
 
 
 // store={store}
 const app = (
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
         <BrowserRouter>
           <App />
         </BrowserRouter>

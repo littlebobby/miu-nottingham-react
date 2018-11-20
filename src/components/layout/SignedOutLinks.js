@@ -6,8 +6,8 @@ import styles from './NavLinks.module.css';
 export default function SignedOutLinks() {
   return (
     <ul className={styles.ul}>
-      <li><NavLink className={styles.a} to='/'>Signup</NavLink></li>
-      <li><NavLink className={styles.a} to='/'>login</NavLink></li>
+      <li><NavLink className={styles.a} to='/signup'>Signup</NavLink></li>
+      <li><NavLink className={styles.a} to='/signin'>login</NavLink></li>
     </ul>
   )
 }
