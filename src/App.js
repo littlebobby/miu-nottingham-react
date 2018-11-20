@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import './App.css';
 
 import EventNew from './components/event_new';
-import Navbar from './components/navbar';
-import Slideshow from './components/slideshow/slideshow';
+import Navbar from './components/Navbar';
+import Slideshow from './components/slideshow/Slideshow';
 
-import {images as data_images} from './data/data'
+import {imagesData as data_images} from './data/data'
 import EventList from './containers/EventList';
-import ReduxTest from './containers/ReduxTest';
+import SigninForm from './containers/signin/SigninForm';
 
 class App extends Component {
+  submit = values => {
+    values.preventDefault()
+    console.log(values);
+  }
   render() {
     return (
       <div className="App">
         <Navbar />
-        {/* <ReduxTest /> */}
         {/* <Slideshow images={data_images}/> */}
         <EventList />
+        <SigninForm handleSubmit={this.submit} />
         <Switch>
           <Route path='/new' component={EventNew} />
         </Switch>

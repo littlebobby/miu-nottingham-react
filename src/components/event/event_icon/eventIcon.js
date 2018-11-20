@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cssModules from './eventIcon.module.css'
+import cssModules from './EventIcon.module.css'
 
 const EventIcon = ({ symbolURL, number=0 }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import EventIconGroup from '../../event_icon_group/eventIconGroup';
-import JoinedUserGroup from '../joined_user_group/joinedUserGroup';
-import cssModules from './eventBriefCard.module.css'
+import EventIconGroup from '../../event_icon_group/EventIconGroup';
+import JoinedUserGroup from '../joined_user_group/JoinedUserGroup';
+import cssModules from './EventBriefCard.module.css'
 import likeSVG from '../../../assets/like.svg'
 import duckSVG from '../../../assets/duck.svg'
 
@@ -12,7 +12,6 @@ export default class EventBriefCard extends Component {
     return this.props.data.interaction.likes !== nextProps.data.interaction.likes
   }
   render() {
-    console.log('event card UPDATED')
     const { title, location, time, imageURL} = this.props.data.info
     return (
       <div className={cssModules.container}>

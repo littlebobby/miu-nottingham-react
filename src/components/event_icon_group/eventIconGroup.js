@@ -1,12 +1,13 @@
 import React from 'react'
-import EventIcon from '../event/event_icon/eventIcon';
+import EventIcon from '../event/event_icon/EventIcon';
 
 import icon_views from '../../assets/views.svg'
 import icon_comments from '../../assets/comments.svg'
 import icon_likes from '../../assets/likes.svg'
-import cssModules from './eventIconGroup.module.css'
+import cssModules from './EventIconGroup.module.css'
 
 const EventIconGroup = ({ interaction }) => {
+  // TODO: only update the like number not the whole IconGroup
   const { views, comments, likes } = interaction
   return (
     <div className={cssModules.iconBox}>

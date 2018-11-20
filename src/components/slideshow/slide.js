@@ -1,5 +1,5 @@
 import React from 'react'
-import cssModules from './slideshow.module.css'
+import cssModules from './Slideshow.module.css'
 
 export default function Slide(props) {
   const styles = {

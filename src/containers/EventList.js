@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import EventBriefCard from '../components/event/event_brief_card/eventBriefCard';
+import EventBriefCard from '../components/event/event_brief_card/EventBriefCard';
 import { connect } from 'react-redux'
 import { likePlusOne } from '../store/actions'
 
-import cssModules from './eventList.module.css'
+import cssModules from './EventList.module.css'
 
 class EventList extends Component {
 
   render() {
-    console.log(this.props.events)
     return (
       <div className={cssModules.section}>
-        {this.props.events.map(i => 
+        {this.props.eventList.map(i => 
           <EventBriefCard 
             key={i.id} 
             data={i} 
             onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
           />
         )}
-        {/* <EventCard /> */}
-
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {events: state.eventList}
+const mapStateToProps = ({ eventList }) => {
+  return {eventList}
 }
 
 const mapDispatchToProps = dispatch => {

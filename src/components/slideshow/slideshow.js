@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Slide from './slide';
-import cssModules from './slideshow.module.css';
+import Slide from './Slide';
+import cssModules from './Slideshow.module.css';
 import arrow_left from '../../assets/arrow_left.svg'
 import arrow_right from '../../assets/arrow_right.svg'
 import { Segment } from 'semantic-ui-react';
