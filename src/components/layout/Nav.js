@@ -10,7 +10,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <Link className={styles.a} to='/'>Logo</Link>
-        {/* <SignedInLinks /> */}
+        <SignedInLinks />
         <SignedOutLinks />
       </div>
     </nav>

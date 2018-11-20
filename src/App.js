@@ -9,6 +9,7 @@ import {imagesData as data_images} from './data/data'
 import EventList from './containers/EventList';
 import SigninForm from './containers/signin/SigninForm';
 import Nav from './components/layout/Nav';
+import EventDetails from './components/event/event_detail.js/EventDetails';
 
 class App extends Component {
   render() {
@@ -20,7 +21,8 @@ class App extends Component {
         <Switch>
           <Route path='/signin' component={SigninForm} />
           <Route path='/new' component={EventNew} />
-          <Route path='/' component={EventList} />
+          <Route exact path='/' component={EventList} />
+          <Route path='/event/:id' component={EventDetails} />
         </Switch>
       </div>
     );
