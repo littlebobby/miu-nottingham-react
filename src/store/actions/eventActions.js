@@ -21,6 +21,23 @@ export const createEvent = event => {
 	};
 };
 
+export const likePlusOne = id => {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
+		const firestore = getFirestore();
+		const obj = firestore.collection('events').doc(id);
+		console.log(getState)
+		// obj.update({
+		// 	'interactions.likes': 44
+		// }).then(function() {
+		// 	console.log("Document successfully updated!");
+		// }).catch((err) => {
+		// 	dispatch({ type: 'LIKE_PLUS_ONE_ERROR', err})
+		// })
+		console.log(obj);
+		dispatch({ type: LIKE_PLUS_ONE, id: id })
+	}
+}
+
 // * this is how we normally do
 // export const createEvent = (event) => {
 //   return {
@@ -29,6 +46,6 @@ export const createEvent = event => {
 //   }
 // }
 
-export function likePlusOne (id) {
-  return ({type: LIKE_PLUS_ONE, payload: id})
-}
+// export function likePlusOne (id) {
+//   return ({type: LIKE_PLUS_ONE, payload: id})
+// }

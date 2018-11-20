@@ -2,6 +2,7 @@
   "name": "miu-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://littlebobby.github.io/miu-nottingham-react",
   "dependencies": {
     "firebase": "^5.5.8",
     "prop-types": "^15.6.2",

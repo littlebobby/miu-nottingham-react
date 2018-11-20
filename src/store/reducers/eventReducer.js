@@ -10,24 +10,30 @@ const eventReducer = (state=initState, action) => {
     case 'CREATE_EVENT_ERROR': 
       console.log('create action error', action.err)
       return state
+    case LIKE_PLUS_ONE: 
+      console.log(action.id)
+      return state
+    case 'LIKE_PLUS_ONE_ERROR': 
+      console.log('like plus one error', action.err)
+      return state
     case EVENT_LIST:
       return state
-    case LIKE_PLUS_ONE: 
-      // ! FIXME: EFFICIENCY! its better to change this into an object, 
-      // ! so dont have to interate through an array
+    // case LIKE_PLUS_ONE: 
+    //   // ! FIXME: EFFICIENCY! its better to change this into an object, 
+    //   // ! so dont have to interate through an array
 
-      // !!! note!! never try to mutate the original state!
-      // !! objects are reference types!!
-      // !! {...obj} only do a shawllo copy
-      // ? should i use lodash deepcopy()? cause json parse seems have some problems
-      const result = JSON.parse(JSON.stringify(state))
-      console.log('state', state)
-      return result.map(i => {
-        if(i.id === action.payload) {
-          i.interaction.likes ++
-        }
-        return i
-      })
+    //   // !!! note!! never try to mutate the original state!
+    //   // !! objects are reference types!!
+    //   // !! {...obj} only do a shawllo copy
+    //   // ? should i use lodash deepcopy()? cause json parse seems have some problems
+    //   const result = JSON.parse(JSON.stringify(state))
+    //   console.log('state', state)
+    //   return result.map(i => {
+    //     if(i.id === action.payload) {
+    //       i.interaction.likes ++
+    //     }
+    //     return i
+    //   })
     default:
       return state
   }

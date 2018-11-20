@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventBriefCard from '../components/event/event_brief_card/EventBriefCard';
 import { connect } from 'react-redux'
+// import { likePlusOne } from '../store/actions/eventActions'
 import { likePlusOne } from '../store/actions/eventActions'
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux' // to connect two hoc 
