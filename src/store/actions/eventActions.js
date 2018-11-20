@@ -5,7 +5,19 @@ import { LIKE_PLUS_ONE } from "../actions";
 export const createEvent = event => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		// make async call to database
-		dispatch({ type: 'CREATE_EVENT', event: event });
+		const firestore = getFirestore();
+		// a reference to events collection
+		firestore.collection('events').add({
+			...event, 
+			authorFirstName: 'Ying',
+			authorLastName: 'Zhou',
+			authorId: 2134,
+			createdAt: new Date()
+		}).then(() => {
+			dispatch({ type: 'CREATE_EVENT', event: event });
+		}).catch((err) => {
+			dispatch({ type: 'CREATE_EVENT_ERROR', err})
+		})
 	};
 };
 

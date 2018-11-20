@@ -9,6 +9,9 @@ const eventReducer = (state=initState, action) => {
     case 'CREATE_EVENT':
       console.log('create project', action.event);
       return state
+    case 'CREATE_EVENT_ERROR': 
+      console.log('create action error', action.err)
+      return state
     case EVENT_LIST:
       return state
     case LIKE_PLUS_ONE: 
