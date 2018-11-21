@@ -6,12 +6,15 @@ export const createEvent = event => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		// make async call to database
 		const firestore = getFirestore();
+		// ! use getState to get the current state
+		const profile = getState().firebase.profile;
+		const authorId = getState().firebase.auth.uid;
 		// a reference to events collection
 		firestore.collection('events').add({
 			...event, 
-			authorFirstName: 'Ying',
-			authorLastName: 'Zhou',
-			authorId: 2134,
+			authorFirstName: profile.firstName,
+			authorLastName: profile.lastName,
+			authorId: authorId,
 			createdAt: new Date()
 		}).then(() => {
 			dispatch({ type: 'CREATE_EVENT', event: event });

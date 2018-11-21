@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './CreateEvent.module.css';
 import { connect } from 'react-redux';
-import { createEvent } from '../../store/actions/eventActions'
+import { createEvent } from '../../store/actions/eventActions';
 
 
 class CreateEvent extends Component {
@@ -12,6 +12,8 @@ class CreateEvent extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createEvent(this.state)
+    // ! redirect - history is passed by react router
+    this.props.history.push('/')
   }
   handleChange = (e) => {
     this.setState({[e.target.id]: e.target.value})
