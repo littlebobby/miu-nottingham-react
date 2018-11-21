@@ -10,7 +10,7 @@ export default function Notification(props) {
         {notifications && notifications.map(i => {
           return (
             <li key={i.id}>
-              <span>{i.user}</span>
+              <span>{i.user} </span>
               <span>{i.content}</span>
               <div>
                 {moment(i.time.toDate()).fromNow()}
