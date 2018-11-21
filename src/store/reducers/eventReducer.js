@@ -11,7 +11,6 @@ const eventReducer = (state=initState, action) => {
       console.log('create action error', action.err)
       return state
     case LIKE_PLUS_ONE: 
-      console.log(action.id)
       return state
     case 'LIKE_PLUS_ONE_ERROR': 
       console.log('like plus one error', action.err)

@@ -31,14 +31,17 @@ export const likePlusOne = id => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firestore = getFirestore();
 		const obj = firestore.collection('events').doc(id);
-		console.log(getState)
-		// obj.update({
-		// 	'interactions.likes': 44
-		// }).then(function() {
-		// 	console.log("Document successfully updated!");
-		// }).catch((err) => {
-		// 	dispatch({ type: 'LIKE_PLUS_ONE_ERROR', err})
-		// })
+		const userId = getState().firebase.auth.uid
+		console.log(userId)
+		const userUpdate = {}
+		userUpdate[`likes.${userId}`] = true
+		obj.update(userUpdate)
+		.then(function() {
+			console.log("Document successfully updated!")
+		})
+		.catch((err) => {
+			dispatch({ type: 'LIKE_PLUS_ONE_ERROR', err})
+		})
 		console.log(obj);
 		dispatch({ type: LIKE_PLUS_ONE, id: id })
 	}
