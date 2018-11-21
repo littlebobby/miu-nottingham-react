@@ -21,15 +21,35 @@ class CreateEvent extends Component {
   render() {
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
-        <h5>Create New Event</h5>
+        <h3>Create New Event</h3>
+        <h4>Info</h4>
         <div className={styles.inputBox}>
           <label className={styles.label} htmlFor="title">Title</label>
           <input className={styles.input} onChange={this.handleChange} id="title" type="text" placeholder='title' />
         </div>
+
         <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="content">Content</label>
-          <textarea className={styles.input} onChange={this.handleChange} id="content" placeholder='content' />
+          <label className={styles.label} htmlFor="imgURL">img URL</label>
+          <input className={styles.input} onChange={this.handleChange} id='imgURL' type="text" placeholder='imgURL' />
         </div>
+
+        <div className={styles.inputBox}>
+          <label className={styles.label} htmlFor="location">Location</label>
+          <input className={styles.input} onChange={this.handleChange} id='location' type="text" placeholder='location' />
+        </div>
+
+          {/* FIXME: this should be fixed to time */}
+        <div className={styles.inputBox}>
+          <label className={styles.label} htmlFor="time">Location</label>
+          <input className={styles.input} onChange={this.handleChange} id='time' type="text" placeholder='time' />
+        </div>
+        
+        <div className={styles.inputBox}>
+          <label className={styles.label} htmlFor="brief">Brief</label>
+          <textarea className={styles.input} onChange={this.handleChange} id="brief" placeholder='brief' />
+        </div>
+
+        
         <button>Create</button>
       </form>
     )

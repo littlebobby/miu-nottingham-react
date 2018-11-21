@@ -11,7 +11,10 @@ export const createEvent = event => {
 		const authorId = getState().firebase.auth.uid;
 		// a reference to events collection
 		firestore.collection('events').add({
-			...event, 
+			info: {...event},
+			interactions: {likes: 0, views: 0, comments: 0},
+			joinedUsers: [],
+			likedUsers: [],
 			authorFirstName: profile.firstName,
 			authorLastName: profile.lastName,
 			authorId: authorId,
