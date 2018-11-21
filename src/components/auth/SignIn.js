@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './SignIn.module.css'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
+import { Redirect } from 'react-router-dom'
 
 // const onSubmit = values => {
 //   console.log(values);
@@ -23,7 +24,8 @@ class SignIn extends Component {
     this.setState({[e.target.id]: e.target.value})
   }
   render() {
-    const { authError } = this.props
+    const { authError, auth } = this.props
+    if (auth.uid) return <Redirect to='/' />
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <h5>Sign In</h5>
@@ -46,7 +48,8 @@ class SignIn extends Component {
 
 const mapStateToProps = state => {
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebase.auth
   }
 }
 

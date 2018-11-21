@@ -35,6 +35,8 @@ const app = (
         </BrowserRouter>
   </Provider>
 )
+
+// waiting for auth is ready: attachAuthIsReady: true
 store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(app, document.getElementById('root'));
   serviceWorker.unregister();

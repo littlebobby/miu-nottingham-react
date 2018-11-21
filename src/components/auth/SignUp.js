@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './SignUp.module.css'
-
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 class SignUp extends Component {
   state = {
     email: '',
@@ -16,6 +17,9 @@ class SignUp extends Component {
     this.setState({[e.target.id]: e.target.value})
   }
   render() {
+    const { authError, auth } = this.props
+    if (auth.uid) return <Redirect to='/' />
+
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <h5>Sign Up</h5>
@@ -41,4 +45,10 @@ class SignUp extends Component {
   }
 } 
 
-export default SignUp;
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(SignUp);
