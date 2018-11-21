@@ -6,6 +6,7 @@ import { likePlusOne } from '../store/actions/eventActions'
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux' // to connect two hoc 
 import cssModules from './EventList.module.css'
+import Notification from '../components/notifications/notification'
 
 class EventList extends Component {
   render() {
@@ -20,13 +21,17 @@ class EventList extends Component {
               onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
             />
         )}
+        <Notification notifications={this.props.notifications}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = ( state ) => {
-  return { events: state.firestore.ordered.events }
+  return { 
+    events: state.firestore.ordered.events,
+    notifications: state.firestore.ordered.notifications
+   }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -39,6 +44,7 @@ const mapDispatchToProps = dispatch => {
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
-    { collection: 'events' }
+    { collection: 'events' },
+    { collection: 'notifications', limit: 3 }
   ])
 )(EventList)
