@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
-import EventIconGroup from '../../event_icon_group/EventIconGroup';
 import JoinedUserGroup from '../joined_user_group/JoinedUserGroup';
-import cssModules from './EventBriefCard.module.css'
+import cssModules from './EventBrief.module.css'
 import likeSVG from '../../../assets/like.svg'
 import duckSVG from '../../../assets/duck.svg'
 import { Link } from 'react-router-dom';
+import EventIconGroup from '../event_icon_group/EventIconGroup';
 
-export default class EventBriefCard extends Component {
+export default class EventBrief extends Component {
   shouldComponentUpdate(nextProps) {
     // !! do not check if two objects are the same or not
     return this.props.data.interactions.likes !== nextProps.data.interactions.likes
   }
   render() {
-    console.log(this.props.data.info)
     const { title, location, time, imageURL} = this.props.data.info
     return (
       <div className={cssModules.container}>

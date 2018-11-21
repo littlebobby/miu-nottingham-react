@@ -6,7 +6,6 @@ import { compose } from 'redux' // to connect two hoc
 function EventDetail(props) {
   const { event } = props
   if (event) {
-    console.log(event) 
     return (
       <div>
         <div>
@@ -29,7 +28,6 @@ const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const events = state.firestore.data.events;
   const event = events ? events[id] : null
-  console.log(event)
   return { 
     event
   }

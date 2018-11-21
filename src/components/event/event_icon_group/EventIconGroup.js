@@ -1,9 +1,9 @@
 import React from 'react'
-import EventIcon from '../event/event_icon/EventIcon';
 
-import icon_views from '../../assets/views.svg'
-import icon_comments from '../../assets/comments.svg'
-import icon_likes from '../../assets/likes.svg'
+import EventIcon from './event_icon/EventIcon'
+import icon_views from '../../../assets/views.svg'
+import icon_comments from '../../../assets/comments.svg'
+import icon_likes from '../../../assets/likes.svg'
 import cssModules from './EventIconGroup.module.css'
 
 const EventIconGroup = ({ interactions }) => {

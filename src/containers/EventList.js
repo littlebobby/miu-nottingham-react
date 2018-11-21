@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventBriefCard from '../components/event/event_brief_card/EventBriefCard';
+import EventBrief from '../components/event/event_brief/EventBrief';
 import { connect } from 'react-redux'
 // import { likePlusOne } from '../store/actions/eventActions'
 import { likePlusOne } from '../store/actions/eventActions'
@@ -9,13 +9,12 @@ import cssModules from './EventList.module.css'
 
 class EventList extends Component {
   render() {
-    console.log(this.props.events)
     const {events} = this.props
     return (
       <div className={cssModules.section}>
       {/* ! by adding events && prevents empty events */}
         {events && events.map(i => 
-            <EventBriefCard 
+            <EventBrief 
               key={i.id}
               data={i} 
               onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
@@ -27,7 +26,6 @@ class EventList extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-  console.log(state)
   return { events: state.firestore.ordered.events }
 }
 
