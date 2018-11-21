@@ -4,8 +4,9 @@ import styles from './Nav.module.css';
 
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
+import { connect } from 'react-redux';
 
-export default function Nav() {
+function Nav(props) {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
@@ -16,3 +17,12 @@ export default function Nav() {
     </nav>
   )
 }
+
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    state: state
+  }
+}
+
+export default connect(mapStateToProps)(Nav)
