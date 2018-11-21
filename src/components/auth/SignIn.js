@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './SignIn.module.css'
-
+import { connect } from 'react-redux'
+import { signIn } from '../../store/actions/authActions'
 
 // const onSubmit = values => {
 //   console.log(values);
@@ -15,13 +16,14 @@ class SignIn extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    this.props.signIn(this.state)
   }
   handleChange = (e) => {
     // ! nive workround
     this.setState({[e.target.id]: e.target.value})
   }
   render() {
+    const { authError } = this.props
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <h5>Sign In</h5>
@@ -34,9 +36,24 @@ class SignIn extends Component {
           <input className={styles.input} onChange={this.handleChange} id="password" type="password" placeholder='Password' />
         </div>
         <button>Login</button>
+        <div>
+          { authError ? <p>{authError}</p> : null}
+        </div>
       </form>
     )
   }
 } 
 
-export default SignIn;
+const mapStateToProps = state => {
+  return {
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
