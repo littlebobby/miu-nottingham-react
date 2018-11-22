@@ -11,12 +11,17 @@ import EventDetails from './components/event/event_detail.js/EventDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateEvent from './components/project/CreateEvent'
+import Switcher from './components/switcher/Switcher';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Nav />
+        <div style={{fontSize: '30px', fontWeight: 'bold', background: 'black', color: 'white', padding: '10px 0 0 30px'}}>
+          Discover
+        </div>
+        <Switcher />
         {/* <Navbar /> */}
         {/* <Slideshow images={data_images}/> */}
         <Switch>
