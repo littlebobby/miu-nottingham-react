@@ -2,8 +2,13 @@
   float: left;
   width: 32%;
   margin: 2px;
-  /* height: 170px; */
-  min-width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    margin: 6% 10% 10% 10%;
+  }
 }
 
 
@@ -11,7 +16,6 @@
   width: 100%;
   position: relative;
   height: 170px;
-  border-radius: 5px;
 }
 
 /* TODO for like button */
@@ -50,6 +54,7 @@
   width: 100%;
   max-height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 /* todo for event time Box */
