@@ -32,6 +32,9 @@
   outline: none;
   cursor: pointer;
 }
+.likedBtn {
+  background-color: #ED153F;
+}
 .likeSVG {
   display: block;
   margin: auto;

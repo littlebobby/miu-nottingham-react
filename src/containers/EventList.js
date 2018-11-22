@@ -18,6 +18,7 @@ class EventList extends Component {
             <EventBrief 
               key={i.id}
               data={i} 
+              userId = {this.props.userId}
               onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
             />
         )}
@@ -30,7 +31,9 @@ class EventList extends Component {
 const mapStateToProps = ( state ) => {
   return { 
     events: state.firestore.ordered.events,
-    notifications: state.firestore.ordered.notifications
+    notifications: state.firestore.ordered.notifications,
+    userId: state.firebase.auth.isEmpty ? null : state.firebase.auth.uid,
+    e: state.events 
    }
 }
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import EventNew from './components/event_new';
-import Navbar from './components/Navbar';
 import Slideshow from './components/slideshow/Slideshow';
 
 import {imagesData as data_images} from './data/data'

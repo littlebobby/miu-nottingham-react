@@ -5,6 +5,7 @@ import styles from './Nav.module.css';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
+import logo_svg from '../../assets/logo.svg'
 
 function Nav(props) {
   const { auth, profile } = props
@@ -12,7 +13,7 @@ function Nav(props) {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <Link className={styles.a} to='/'>Logo</Link>
+        <Link to='/'><img style={{height: '60%', paddingTop: '10px', paddingLeft: '10px'}} src={logo_svg} alt='logo' /></Link>
         {links}
       </div>
     </nav>
@@ -20,7 +21,6 @@ function Nav(props) {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile

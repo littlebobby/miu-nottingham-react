@@ -13,11 +13,20 @@ export default class EventBrief extends Component {
   }
   render() {
     const { title, location, time, imageURL} = this.props.data.info
+    const btnBgColor = [cssModules.likeBtn]
+    // object 
+    const { likes } = this.props.data
+    // console.log(likes)
+    const { userId } = this.props
+    // console.log(userId)
+    if (userId) {
+      if (likes.hasOwnProperty(userId)) btnBgColor.push(cssModules.likedBtn)
+    }
     return (
       <div className={cssModules.container}>
         <div className={cssModules.card}>
           <div className={cssModules.likeBtnBox}>
-            <button className={cssModules.likeBtn} onClick={this.props.onLikeButtonClicked}>
+            <button className={btnBgColor.join(' ')} onClick={this.props.onLikeButtonClicked}>
               <img alt='like' className={cssModules.likeSVG} src={likeSVG} />
             </button>
           </div>
