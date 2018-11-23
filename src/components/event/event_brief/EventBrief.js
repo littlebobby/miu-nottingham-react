@@ -20,7 +20,7 @@ export default class EventBrief extends Component {
     const { userId } = this.props
     // console.log(userId)
     if (userId) {
-      if (likes.hasOwnProperty(userId)) btnBgColor.push(cssModules.likedBtn)
+      if (likes && likes.hasOwnProperty(userId)) btnBgColor.push(cssModules.likedBtn)
     }
     return (
       <div className={cssModules.container}>
