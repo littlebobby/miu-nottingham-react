@@ -1,5 +1,5 @@
 
-const initState = ''
+const initState = 'all'
 
 const eventTypeReducer = (state = initState, action) => {
   switch (action.type) {

@@ -12,6 +12,10 @@ function EventDetail(props) {
     return (
       <div>
         <div>
+          <img src={event.info.imageURL}></img>
+        </div>
+        <div>
+
           <span>{event.info.title}</span>
           <p>{event.info.brief}
           </p>

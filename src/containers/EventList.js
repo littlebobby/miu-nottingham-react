@@ -14,13 +14,21 @@ class EventList extends Component {
     return (
       <div className={cssModules.section}>
       {/* ! by adding events && prevents empty events */}
-        {events && events.map(i => 
-            <EventBrief 
-              key={i.id}
-              data={i} 
-              userId = {this.props.userId}
-              onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
-            />
+        {events && events.map(i => {
+            console.log(i)
+            
+            return this.props.eventType === i.type || this.props.eventType === 'all' ? 
+             (
+              <EventBrief 
+                key={i.id}
+                data={i} 
+                userId = {this.props.userId}
+                onLikeButtonClicked={() => this.props.likePlusOne(i.id)}
+              />
+            )
+            : null
+        }
+            
         )}
         <Notification notifications={this.props.notifications}/>
       </div>
@@ -33,7 +41,7 @@ const mapStateToProps = ( state ) => {
     events: state.firestore.ordered.events,
     notifications: state.firestore.ordered.notifications,
     userId: state.firebase.auth.isEmpty ? null : state.firebase.auth.uid,
-    e: state.events 
+    eventType: state.eventType
    }
 }
 

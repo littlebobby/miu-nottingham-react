@@ -43,6 +43,15 @@ class CreateEvent extends Component {
           <label className={styles.label} htmlFor="time">Location</label>
           <input className={styles.input} onChange={this.handleChange} id='time' type="text" placeholder='time' />
         </div>
+
+        <div className={styles.inputBox}>
+          <label className={styles.label} htmlFor="type">Location</label>
+          <select name='type'>
+            <option value="Lecture">Lecture</option>
+            <option value="Career">Career</option>
+            <option value="Party">Party</option>
+          </select>
+        </div>
         
         <div className={styles.inputBox}>
           <label className={styles.label} htmlFor="brief">Brief</label>
