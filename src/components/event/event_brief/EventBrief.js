@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 import EventIconGroup from '../event_icon_group/EventIconGroup';
 
 export default class EventBrief extends Component {
+  state = {
+    liked: false
+  }
+
   shouldComponentUpdate(nextProps) {
     // !! do not check if two objects are the same or not
     return this.props.data.interactions.likes !== nextProps.data.interactions.likes

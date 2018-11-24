@@ -5,24 +5,19 @@ import EventNew from './components/event_new';
 import Slideshow from './components/slideshow/Slideshow';
 
 import {imagesData as data_images} from './data/data'
-import EventList from './containers/EventList';
 import Nav from './components/layout/Nav';
 import EventDetails from './components/event/event_detail.js/EventDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateEvent from './components/project/CreateEvent'
-import Switcher from './components/switcher/Switcher';
+import Homepage from './components/layout/Homepage';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Nav />
-        <div style={{fontSize: '30px', fontWeight: 'bold', background: 'black', color: 'white', padding: '10px 0 0 30px'}}>
-          Discover
-        </div>
-        <Switcher />
-        {/* <Navbar /> */}
+        
         {/* <Slideshow images={data_images}/> */}
         <Switch>
           <Route path='/signin' component={SignIn} />
@@ -30,7 +25,7 @@ class App extends Component {
           <Route path='/create' component={CreateEvent} />
 
           <Route path='/new' component={EventNew} />
-          <Route exact path='/' component={EventList} />
+          <Route exact path='/' component={Homepage} />
           <Route path='/event/:id' component={EventDetails} />
         </Switch>
       </div>
