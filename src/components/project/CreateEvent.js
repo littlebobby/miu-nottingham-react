@@ -7,7 +7,10 @@ import { createEvent } from '../../store/actions/eventActions';
 class CreateEvent extends Component {
   state = {
     title: '',
-    content: ''
+    brief: '',
+    type: '',
+    imageURL: '',
+    location: '',
   }
   handleSubmit = (e) => {
     e.preventDefault();
@@ -45,8 +48,8 @@ class CreateEvent extends Component {
         </div>
 
         <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="type">Location</label>
-          <select name='type'>
+          <label className={styles.label} htmlFor="type">Event Type</label>
+          <select name='type' id='type'>
             <option value="Lecture">Lecture</option>
             <option value="Career">Career</option>
             <option value="Party">Party</option>

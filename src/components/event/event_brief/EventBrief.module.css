@@ -1,13 +1,21 @@
 .container {
   float: left;
   width: 32%;
-  margin: 2px;
+  display: block;
+  margin: auto;
+  /* margin: 2px; */
 }
 
 @media only screen and (max-width: 600px) {
   .container {
     width: 80%;
     margin: 6% 10% 10% 10%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    margin: 0 0 30px 1.3%;
   }
 }
 
