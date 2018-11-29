@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, EventDetail, EventListContainer, Homepage, SignIn, SignUp, CreateEvent, Nav } from 'components';
+import { EventDetail, Homepage, SignIn, SignUp, CreateEvent, Nav } from 'components';
 import { Route, Switch } from 'react-router-dom';
 import styles from './App.module.scss'
 

@@ -1,9 +1,0 @@
-[debug] [2018-11-29T16:05:04.960Z] ----------------------------------------------------------------------
-[debug] [2018-11-29T16:05:04.962Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
-[debug] [2018-11-29T16:05:04.963Z] CLI Version:   6.1.1
-[debug] [2018-11-29T16:05:04.963Z] Platform:      darwin
-[debug] [2018-11-29T16:05:04.963Z] Node Version:  v11.1.0
-[debug] [2018-11-29T16:05:04.963Z] Time:          Fri Nov 30 2018 00:05:04 GMT+0800 (China Standard Time)
-[debug] [2018-11-29T16:05:04.964Z] ----------------------------------------------------------------------
-[debug] 
-[info] Already logged in as zxiaoyun98@gmail.com

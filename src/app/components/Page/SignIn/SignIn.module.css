@@ -6,8 +6,6 @@
 
 .label {
   display: block;
-  /* position: absolute; */
-  /* transform: translateY(-10px) */
   font-size: 16px;
   line-height: 16px;
   width: 100%;

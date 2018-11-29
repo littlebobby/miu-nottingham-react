@@ -6,7 +6,7 @@ export default function JoinedUserGroup({ joinedUsers }) {
   return (
     <div className={cssModules.clearFix}>
       {joinedUsers.map(i => {
-        return <img className={cssModules.img} key={userData[i-1].id} src={userData[i-1].picture} />
+        return <img alt='user' className={cssModules.img} key={userData[i-1].id} src={userData[i-1].picture} />
       })}
     </div>
   )

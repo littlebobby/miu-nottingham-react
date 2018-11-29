@@ -1,0 +1,22 @@
+@import '../../../styles/colors';
+
+.Container {
+  background: #000;
+  width:100vw;
+
+  h3 {
+    text-transform: uppercase;
+    color: $color-dark-gray;
+    font-size: 1.8rem;
+  }
+  p {
+    color: white;
+  }
+}
+
+.Img {
+  img {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  }
+}
