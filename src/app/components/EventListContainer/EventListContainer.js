@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import EventBrief from './EventBrief/EventBrief';
 import { connect } from 'react-redux'
 // import { likePlusOne } from '../store/actions/eventActions'
-// import { likePlusOne } from '../store/actions/eventActions'  // !
-import { likePlusOne } from '../../../store/actions/eventActions' // ?
+// import { likePlusOne } from '../../../store/actions/eventActions' // !
+import { likePlusOne } from '../../store/actions/eventActions' // ?
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux' // to connect two hoc 
 import cssModules from './EventListContainer.module.css'

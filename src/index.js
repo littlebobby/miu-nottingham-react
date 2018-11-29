@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 // import reducers from './store/index'
-import rootReducer from './store/reducers/rootReducer'
+// import rootReducer from './store/reducers/rootReducer'
+import rootReducer from './app/store/reducers/rootReducer'
 
 import './index.scss';
 import App from './App';

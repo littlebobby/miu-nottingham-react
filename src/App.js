@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
+        {/* <Nav /> */}
         
         {/* <Slideshow images={data_images}/> */}
         {/* <Switch>

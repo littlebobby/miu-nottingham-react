@@ -1,5 +1,6 @@
 export { default as Button } from './Button/Button';
 export { default as Icon } from './Icon/Icon';
+export { default as Nav } from './Nav/Nav';
 
 //pages
 // export {default as EventDetail} from './Page/EventDetail/EventDetail';

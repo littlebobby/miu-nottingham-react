@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styles from './SignUp.module.css'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { signUp } from '../../../../store/actions/authActions'
+// import { signUp } from '../../../../store/actions/authActions' //!
+import { signUp } from '../../../store/actions/authActions' //?
 class SignUp extends Component {
   state = {
     email: '',

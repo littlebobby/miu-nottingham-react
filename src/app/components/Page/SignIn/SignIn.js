@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styles from './SignIn.module.css'
 import { connect } from 'react-redux'
 // import { signIn } from '../../store/actions/authActions'
-import { signIn } from '../../../../store/actions/authActions'
+// import { signIn } from '../../../../store/actions/authActions' //!
+import { signIn } from '../../../store/actions/authActions' //?
 import { Redirect } from 'react-router-dom'
 
 // const onSubmit = values => {

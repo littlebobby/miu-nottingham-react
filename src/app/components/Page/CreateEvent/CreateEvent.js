@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styles from './CreateEvent.module.css';
 import { connect } from 'react-redux';
-import { createEvent } from '../../../../store/actions/eventActions';
+// import { createEvent } from '../../../../store/actions/eventActions'; //!
+import { createEvent } from '../../../store/actions/eventActions'; //?
 
 
 class CreateEvent extends Component {
