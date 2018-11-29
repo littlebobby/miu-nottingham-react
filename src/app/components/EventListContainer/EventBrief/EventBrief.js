@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import JoinedUserGroup from '../joined_user_group/JoinedUserGroup';
+import JoinedUserGroup from '../JoinedUserGroup/JoinedUserGroup';
 import cssModules from './EventBrief.module.css'
 // import likeSVG from '../../../assets/like.svg' //!
 import likeSVG from '../../../../assets/like.svg' // ?
@@ -59,7 +59,7 @@ export default class EventBrief extends Component {
           </div>
          
         </div>
-        {/* <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/> */}
+        <JoinedUserGroup joinedUsers={this.props.data.joinedUsers}/>
       </div>
     )
   }
