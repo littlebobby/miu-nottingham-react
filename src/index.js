@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 // import reducers from './store/index'
 import rootReducer from './store/reducers/rootReducer'
 
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import thunk from 'redux-thunk'
@@ -26,6 +26,9 @@ const store = createStore(rootReducer,
     reactReduxFirebase(fbConfig, {useFirestoreForProfile: true, userProfile: 'users', attachAuthIsReady: true})
   )
 );
+
+
+
 
 
 // store={store}

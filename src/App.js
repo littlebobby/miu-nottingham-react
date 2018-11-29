@@ -12,6 +12,10 @@ import SignUp from './components/auth/SignUp';
 import CreateEvent from './components/project/CreateEvent'
 import Homepage from './components/layout/Homepage';
 
+import App1 from './app/components/AppContainer/App/App'
+
+
+
 class App extends Component {
   render() {
     return (
@@ -28,6 +32,7 @@ class App extends Component {
           <Route exact path='/' component={Homepage} />
           <Route path='/event/:id' component={EventDetails} />
         </Switch>
+        <App1 />
       </div>
     );
   }
