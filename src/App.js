@@ -23,7 +23,7 @@ class App extends Component {
         <Nav />
         
         {/* <Slideshow images={data_images}/> */}
-        <Switch>
+        {/* <Switch>
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />
           <Route path='/create' component={CreateEvent} />
@@ -31,7 +31,7 @@ class App extends Component {
           <Route path='/new' component={EventNew} />
           <Route exact path='/' component={Homepage} />
           <Route path='/event/:id' component={EventDetails} />
-        </Switch>
+        </Switch> */}
         <App1 />
       </div>
     );
