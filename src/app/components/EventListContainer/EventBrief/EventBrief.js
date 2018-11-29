@@ -6,7 +6,7 @@ import likeSVG from '../../../../assets/like.svg' // ?
 // import duckSVG from '../../../assets/duck.svg' //!
 import duckSVG from '../../../../assets/duck.svg' //?
 import { Link } from 'react-router-dom';
-// import EventIconGroup from '../event_icon_group/EventIconGroup';
+import EventIconGroup from '../EventIconGroup/EventIconGroup';
 
 export default class EventBrief extends Component {
   state = {
@@ -51,7 +51,7 @@ export default class EventBrief extends Component {
             <span className={cssModules.title}>{title}</span>
             {/* <span>{location}</span> */}
           </div>
-          {/* <EventIconGroup interactions={this.props.data.interactions}/> */}
+          <EventIconGroup interactions={this.props.data.interactions}/>
           <div className={cssModules.goingBox}>
             <button className={cssModules.goingBtn}>
               <img src={duckSVG} alt='going' />
