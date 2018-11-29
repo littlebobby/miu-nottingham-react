@@ -3,7 +3,7 @@ import { Button, Icon, EventDetail, EventListContainer, Homepage, SignIn, SignUp
 import { Route, Switch } from 'react-router-dom';
 import styles from './App.module.scss'
 
-export default function App1() {
+export default function App() {
   return (
     <div className={styles.but}>
       <Nav />

@@ -9,7 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 import rootReducer from './app/store/reducers/rootReducer'
 
 import './index.scss';
-import App from './App';
+// import App from './App';
+import App from './app/components/AppContainer/App/App'
 import * as serviceWorker from './serviceWorker';
 import thunk from 'redux-thunk'
 // reduxFirestore reactReduxFirebase are store enhancers 

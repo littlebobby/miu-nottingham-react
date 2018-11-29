@@ -1,5 +1,5 @@
 import React from 'react'
-import userData from '../../../../data/user'
+import userData from 'data/user'
 import cssModules from './JoinedUserGroup.module.css';
 
 export default function JoinedUserGroup({ joinedUsers }) {

@@ -5,8 +5,8 @@ import { compose } from 'redux' // to connect two hoc
 import moment from 'moment'
 import styles from './EventDetail.module.css'
 import { Link } from 'react-router-dom';
-import arrow_left from '../../../assets/arrow_left.svg'
-import likeSVG from '../../../assets/like.svg'
+import arrow_left from 'assets/arrow_left.svg'
+import likeSVG from 'assets/like.svg'
 
 
 function EventDetail(props) {

@@ -6,7 +6,7 @@ import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
 // import logo_svg from '../../assets/logo.svg'
-import logo_svg from '../../../assets/logo.svg'
+import logo_svg from 'assets/logo.svg'
 
 function Nav(props) {
   const { auth, profile } = props
