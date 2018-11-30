@@ -172,13 +172,11 @@
 .Comments {
   margin: 0 2rem;
   margin-top: 2.4rem; // FIXME: change it 
-  background: $color-black-primary;
   
-  div {
-    height: 4.4rem;
-    width: 4.4rem;
-    border-radius: 50%;
-    background-size: cover;
-    background-image: url(../../../assets//hosts/sherene.jpeg);
+  background: $color-black-primary;
+
+  h3 {
+    margin-bottom: .4rem; // ! change it
   }
+
 }

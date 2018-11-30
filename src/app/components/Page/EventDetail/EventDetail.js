@@ -5,7 +5,7 @@ import { compose } from 'redux' // to connect two hoc
 import styles from './EventDetail.module.scss'
 import { Icon } from 'components'
 import duck_svg from 'assets/duck.svg';
-import { JoinedUserGroup } from 'components'
+import { Comment, JoinedUserGroup } from 'components'
 
 // ? should the 'read more' display directly after overview
 
@@ -66,8 +66,7 @@ function EventDetail(props) {
 
         <section className={styles.Comments}>
           <h3>Comments</h3>
-          <div></div>
-
+          <Comment />
         </section>
       </div>
     )
