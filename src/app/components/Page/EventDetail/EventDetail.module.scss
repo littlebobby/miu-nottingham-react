@@ -1,15 +1,17 @@
 @import '../../../styles/colors';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
 
 .Container {
-  background: #000;
-  width:100vw;
-  // height: 250px;
   font-size: 1.6rem;
+  background: $color-black-primary;
 
   h3 {
     text-transform: uppercase;
     color: $color-dark-gray;
     font-size: 1.8rem;
+    padding-bottom: $padding-bottom-small;
   }
   
   a {
@@ -27,7 +29,7 @@
 .Img {
   position: relative;
  
-  .heading {
+  .heading { // event title banner
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -44,25 +46,24 @@
   }
   .imageBox {
     height: 25rem;
-  }
-  img { // background image 
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20rem);
+
+    img { // background image 
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20rem);
+    }
   }
 
   button { // duck button
     position: absolute;
-    height: 5rem;
-    width: 5rem;
+    @include rounded-corner(5rem);
     right: 4rem;
     bottom: 0;
     background: linear-gradient(to bottom, rgba(#000, .3), rgba($color-yellow-primary, .3));
-    border-radius: 50%;
     border: none;
     transform: translateY(25%);
-    padding: 10px; 
+    padding: 1rem; 
   }
 
   .Host {
@@ -82,13 +83,10 @@
     & > div { // host image
       background-image: url('../../../assets/hosts/vav.png');
       background-size: cover;
-      height: 4.4rem;
-      width: 4.4rem;
-      border-radius: 50%;
-      background-color: transparent;
+      @include rounded-corner(4.4rem);
     }
 
-    p {
+    p { // hosted by
       margin-left: .8rem;
       color: $color-light-gray;
     }
@@ -101,12 +99,11 @@
 }
 
 .Info { // date and location
-  color: white;
-  margin: 2rem 2rem 0 2rem;
+  margin: $margin-event-detail-section;
   height: 5rem;
+  color: $color-white-primary;
   
-  h6 {
-    color: $color-white-primary;
+  h6 { // Dec 24
     font-size: 1.8rem;
     text-align: center;
     width: 5rem;
@@ -126,26 +123,15 @@
       margin: 1px 20px;
       width: 2px;
       text-align: 100%;
-      background: white;
+      background: $color-white-primary;
       display: inline-block;
       border-radius: 2px;
     }
-
-    a {
-      color: lighten($color-light-blue, 10%);
-    }
-
   }
 }
 
 .Overview {
-  margin: 0 2rem;
-  margin-top: 2.4rem; // FIXME: change it 
-  background: $color-black-primary;
-
-  h3 {
-    padding-bottom: 4px;
-  }
+  margin: $margin-event-detail-section;
 
   p {
     color: $color-light-gray;
@@ -154,9 +140,7 @@
 }
 
 .Going {
-  margin: 0 2rem;
-  margin-top: 2.4rem; // FIXME: change it 
-  background: $color-black-primary;
+  margin: $margin-event-detail-section;
 
   div {
     height: 3rem;
@@ -170,13 +154,5 @@
 }
 
 .Comments {
-  margin: 0 2rem;
-  margin-top: 2.4rem; // FIXME: change it 
-  
-  background: $color-black-primary;
-
-  h3 {
-    margin-bottom: .4rem; // ! change it
-  }
-
+  margin: $margin-event-detail-section;
 }

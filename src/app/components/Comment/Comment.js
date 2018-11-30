@@ -3,6 +3,8 @@ import upvote_svg from '../../assets/upvote.svg'
 import sherene_png from '../../assets/hosts/sherene.jpeg'
 import styles from './Comment.module.scss'
 
+// TODO: ADD REPLY FEATURE 
+
 const Comment = (props) => {
   return (
     <div className={styles.Container}>
