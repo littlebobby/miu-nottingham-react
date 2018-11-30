@@ -1,6 +1,8 @@
 export { default as Button } from './Button/Button';
 export { default as Icon } from './Icon/Icon';
 export { default as Nav } from './Nav/Nav';
+// FIXME: cahnge joined user group into seperate component
+export {default as JoinedUserGroup} from './EventListContainer/JoinedUserGroup/JoinedUserGroup'
 
 //pages
 export {default as Homepage} from './Page/Homepage/Homepage';

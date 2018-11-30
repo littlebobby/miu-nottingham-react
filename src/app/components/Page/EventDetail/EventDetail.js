@@ -4,7 +4,10 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux' // to connect two hoc 
 import styles from './EventDetail.module.scss'
 import { Icon } from 'components'
-import duck_svg from 'assets/duck.svg'
+import duck_svg from 'assets/duck.svg';
+import { JoinedUserGroup } from 'components'
+
+// ? should the 'read more' display directly after overview
 
 
 function EventDetail(props) {
@@ -20,7 +23,10 @@ function EventDetail(props) {
           <div className={styles.heading}>
             <p>{props.event.info.title}</p>
           </div>
-          <img src={props.event.info.imageURL} alt='event'/>
+          <div className={styles.imageBox}>
+            <img src={props.event.info.imageURL} alt='event'/>
+          </div>
+         
           <button>
             <Icon src={duck_svg} alt='duck'/>
           </button>
@@ -49,9 +55,18 @@ function EventDetail(props) {
         <section className={styles.Overview}>
           <h3>Overview</h3>
           <p>{props.event.info.brief}</p>
+          <a href='#'>Read more</a>
         </section>
 
+        <section className={styles.Going}>
+          <h3>3 Going</h3>
+          <JoinedUserGroup joinedUsers={props.event.joinedUsers}/>
+        </section>
+
+
         <section className={styles.Comments}>
+          <h3>Comments</h3>
+          <div></div>
 
         </section>
       </div>
