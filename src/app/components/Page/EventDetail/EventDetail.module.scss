@@ -69,11 +69,11 @@
 
     div,
     p,
-    a {
+    span {
       float: left;
     }
 
-    div {
+    & > div { // host image
       background-image: url('../../../assets/hosts/vav.png');
       background-size: cover;
       height: 4.4rem;
@@ -87,22 +87,10 @@
       color: $color-light-gray;
     }
 
-    a {
+    span {
       margin-left: .5rem;
       font-style: italic;
     }
-
-    // a {
-    //   margin-left: .5rem;
-    //   color: $color-light-blue;
-    //   cursor: pointer;
-    //   font-style: italic;
-
-    //   &:link,
-    //   &:visited {
-    //     text-decoration: none;
-    //   }
-    // }
   }
 }
 

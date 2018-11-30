@@ -27,7 +27,9 @@ function EventDetail(props) {
           <div className={styles.Host}>
             <div></div>
             <p>Hosted by</p>
-            <a href='#'>{props.event.authorFirstName}</a>
+            <span>
+              <a href='#'>{props.event.authorFirstName}</a>
+            </span>
           </div>
         </section>
         <section className={styles.Info}>
