@@ -11,6 +11,16 @@
     font-size: 1.8rem;
   }
   
+  a {
+    color: $color-light-blue;
+    cursor: pointer;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+  
 }
 
 .Img {
@@ -79,15 +89,59 @@
 
     a {
       margin-left: .5rem;
-      color: $color-light-blue;
-      cursor: pointer;
       font-style: italic;
-
-      &:link,
-      &:visited {
-        text-decoration: none;
-      }
     }
+
+    // a {
+    //   margin-left: .5rem;
+    //   color: $color-light-blue;
+    //   cursor: pointer;
+    //   font-style: italic;
+
+    //   &:link,
+    //   &:visited {
+    //     text-decoration: none;
+    //   }
+    // }
+  }
+}
+
+.Info { // date and location
+  font-size: 1.6rem;
+  color: white;
+  margin: 2rem 2rem 0 2rem;
+  height: 5rem;
+  
+  h6 {
+    color: $color-white-primary;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 5rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    float: left;
+  }
+  .InfoRightBox {
+    height: 5rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .Divider { // divider bwteen time and location
+      height: 9px;
+      margin: 1px 20px;
+      width: 2px;
+      text-align: 100%;
+      background: white;
+      display: inline-block;
+      border-radius: 2px;
+    }
+
+    a {
+      color: lighten($color-light-blue, 10%);
+    }
+
   }
 }
 

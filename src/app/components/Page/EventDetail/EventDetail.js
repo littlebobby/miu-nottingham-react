@@ -30,6 +30,20 @@ function EventDetail(props) {
             <a href='#'>{props.event.authorFirstName}</a>
           </div>
         </section>
+        <section className={styles.Info}>
+          <h6>Dec 26</h6>
+          <div className={styles.InfoRightBox}>
+            <div>
+              <span>14:00 - 16:00</span>
+              <div className={styles.Divider}></div>
+              <span>TB 226</span>
+            </div>
+            <div>
+              <a href='#'>Add to Calendar</a>
+            </div>
+          </div>
+        </section>
+
         <section className={styles.Overview}>
           <h3>Overview</h3>
           <p>{props.event.info.brief}</p>
