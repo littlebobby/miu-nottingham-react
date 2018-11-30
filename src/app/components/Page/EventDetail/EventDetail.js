@@ -15,15 +15,20 @@ function EventDetail(props) {
     console.log(props);
     return (
       <div className={styles.Container}>
-      
+
         <section className={styles.Img}>
           <div className={styles.heading}>
             <p>{props.event.info.title}</p>
           </div>
-          <img className={styles.bg} src={props.event.info.imageURL} alt='event'/>
-          <button className={styles.goingBtn}>
+          <img src={props.event.info.imageURL} alt='event'/>
+          <button>
             <Icon src={duck_svg} alt='duck'/>
           </button>
+          <div className={styles.Host}>
+            <div></div>
+            <p>Hosted by</p>
+            <a href='#'>{props.event.authorFirstName}</a>
+          </div>
         </section>
         <section className={styles.Overview}>
           <h3>Overview</h3>
