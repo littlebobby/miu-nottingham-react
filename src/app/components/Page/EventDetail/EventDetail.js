@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux' // to connect two hoc 
 import styles from './EventDetail.module.scss'
+import { Icon } from 'components'
+import duck_svg from 'assets/duck.svg'
 
 
 function EventDetail(props) {
@@ -13,8 +15,15 @@ function EventDetail(props) {
     console.log(props);
     return (
       <div className={styles.Container}>
+      
         <section className={styles.Img}>
-          <img src={props.event.info.imageURL} alt='event'/>
+          <div className={styles.heading}>
+            <p>{props.event.info.title}</p>
+          </div>
+          <img className={styles.bg} src={props.event.info.imageURL} alt='event'/>
+          <button className={styles.goingBtn}>
+            <Icon src={duck_svg} alt='duck'/>
+          </button>
         </section>
         <section className={styles.Overview}>
           <h3>Overview</h3>

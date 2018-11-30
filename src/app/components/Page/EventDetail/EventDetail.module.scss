@@ -3,20 +3,48 @@
 .Container {
   background: #000;
   width:100vw;
+  // height: 250px;
 
   h3 {
     text-transform: uppercase;
     color: $color-dark-gray;
     font-size: 1.8rem;
   }
-  p {
-    color: white;
-  }
+  
 }
 
 .Img {
-  img {
+  position: relative;
+ 
+  .heading {
+    z-index: 1;
+    position: absolute;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(#fff, .5);
+
+    p {
+      line-height: 4rem;
+      font-size: 1.8rem;
+      color: $color-dark-gray;
+    }
+  }
+  .bg {
+    height: 25rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20rem);
+  }
+
+  .goingBtn {
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    right: 6rem;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(#000, .3), rgba($color-yellow-primary, .3));
+    border-radius: 50%;
+    border: none;
+    transform: translateY(20%);
   }
 }
