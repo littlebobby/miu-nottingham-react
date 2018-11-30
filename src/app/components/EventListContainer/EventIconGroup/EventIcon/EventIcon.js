@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cssModules from './EventIcon.module.css'
+import cssModules from './EventIcon.module.scss'
+import { Icon }from 'components';
 
 const EventIcon = ({ symbolURL, number=0 }) => {
   return (
-    <div className={cssModules.eventIcon}>
-      <img className={cssModules.icon} alt='icon' src={symbolURL}/>
+    <div className={cssModules.EventIcon}>
+      <Icon alt='icon' src={symbolURL}></Icon>
       {' '}
-      <span className={cssModules.text}>{number}</span>
+      <span>{number}</span>
     </div>
   )
 }

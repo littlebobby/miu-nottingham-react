@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import JoinedUserGroup from '../JoinedUserGroup/JoinedUserGroup';
 import cssModules from './EventBrief.module.css'
-// import likeSVG from '../../../assets/like.svg' //!
 import likeSVG from 'assets/like.svg' // ?
-// import duckSVG from '../../../assets/duck.svg' //!
-// import duckSVG from '../../../../assets/duck.svg' //?
 import duckSVG from 'assets/duck.svg' 
 import { Link } from 'react-router-dom';
 import EventIconGroup from '../EventIconGroup/EventIconGroup';

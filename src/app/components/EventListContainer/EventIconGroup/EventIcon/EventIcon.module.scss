@@ -1,0 +1,14 @@
+@import '../../../../styles/colors';
+
+.EventIcon {
+  float: left;
+  height: 1.1rem;
+  color: $color-white-primary;
+  &:not(:last-child) {
+     margin-right: 1rem;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
