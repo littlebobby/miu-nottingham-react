@@ -31,6 +31,7 @@ class CreateEvent extends Component {
     this.setState({[e.target.id]: e.target.value})
   }
 
+  // FIXME: async
   handleFileUpload = (e) => {
     // get file
     if (e.target.files[0] === undefined) {

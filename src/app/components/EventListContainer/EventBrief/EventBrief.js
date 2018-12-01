@@ -5,6 +5,8 @@ import likeSVG from 'assets/like.svg' // ?
 import duckSVG from 'assets/duck.svg' 
 import { Link } from 'react-router-dom';
 import EventIconGroup from '../EventIconGroup/EventIconGroup';
+import moment from 'moment'
+
 
 export default class EventBrief extends Component {
   state = {
@@ -16,7 +18,7 @@ export default class EventBrief extends Component {
     return this.props.data.interactions.likes !== nextProps.data.interactions.likes
   }
   render() {
-    const { title, location, time, imageURL} = this.props.data.info
+    const { title, location, time, imageURL, startTime, endTime} = this.props.data.info
     const btnBgColor = [cssModules.likeBtn]
     // object 
     const { likes } = this.props.data
@@ -42,7 +44,13 @@ export default class EventBrief extends Component {
           </div>
 
           <div className={cssModules.timeBox}>
-            <span className={cssModules.timeText}>{time}</span>
+          {/* FIXME: calc time from startTime & delete and reinsert document in firestore */}
+          {time ? <span className={cssModules.timeText}>{time}</span> 
+          : 
+          <span className={cssModules.timeText}>{moment(startTime.toDate().toString()).format("MMM Do")}</span> 
+          
+          }
+            
           </div>
 
           <div className={cssModules.titleBox}>
