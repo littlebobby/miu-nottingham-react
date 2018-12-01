@@ -34,17 +34,19 @@ class SignUp extends Component {
               Your brower is not supported 
           </video>
         </div>
-
+       
         <form className={styles.Form} onSubmit={this.handleSubmit}>
           <h5>Sign Up</h5>
-          <Input type='email' onChange={this.handleChange} id='email' placeholder='email'/>
-          <Input type='password' onChange={this.handleChange} id='password' placeholder='password' />
+          <Input type='email' onChange={this.handleChange} id='email' placeholder='Email'/>
+          <Input type='password' onChange={this.handleChange} id='password' placeholder='Password' />
           <Input type='text' onChange={this.handleChange} id='firstName' placeholder='First name' />
           <Input type='text' onChange={this.handleChange} id='lastName' placeholder='Last name' />
+        <div className={styles.error}>
+          {authError ? <p>{authError}</p> : null}
+        </div>
+          
           <button>Sign up</button>
-          <div>
-            {authError ? <p>{authError}</p> : null}
-          </div>
+         
         </form>
       </div>
     )

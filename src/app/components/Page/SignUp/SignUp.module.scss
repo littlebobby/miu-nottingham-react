@@ -3,13 +3,41 @@
   height: calc(100vh - 5rem);
   width: 100vw;
   background: rgba(#000, .6);
+
+  h5 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  button {
+    border-radius: 20px;
+    padding: 1.5rem 4rem;
+    background: rgba(#ddd, .5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    transition: all .5s;
+    font-weight: 600;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+  .error { // error div after submit clicked
+    color: white;
+    font-size: 1.6rem;
+  }
 }
 
 .Form {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 50rem;
 }
 
 .Video {
@@ -26,47 +54,3 @@
     object-fit: cover;
   }
 }
-
-@media all and (min-width: 480px) {
-  .Form {
-    margin: 0 auto;
-    max-width: 450px;
-    border: 1px red solid;
-  }
-}
-@media all and (max-width: 480px) {
-  .Form {
-    margin: 0 auto;
-    max-width: 250px;
-    border: 1px green solid;
-  }
-}
-
-
-
-// .inputBox {
-//   position: relative;
-//   border: 1px turquoise solid;
-//   margin: 10px;
-// }
-
-// .label {
-//   display: block;
-//   /* position: absolute; */
-//   /* transform: translateY(-10px) */
-//   font-size: 16px;
-//   line-height: 16px;
-//   width: 100%;
-// }
-// .input {
-//   border: none;
-//   font-size: 16px;
-//   padding: 0;
-//   outline: none;
-//   line-height: 19px;
-//   width: 100%;
-// }
-// .input::before {
-//   content: '';
-// }
-

@@ -8,8 +8,8 @@ const Input = ({ type, onChange, id, placeholder }) => {
   // const capitalized = type.charAt(0).toUpperCase() + type.slice(1)
   return (
     <div className={styles.InputBox}>
-      <label htmlFor={id}>{placeholder}</label>
       <input onChange={onChange} id={id} type={type} placeholder={placeholder} />
+      <label htmlFor={id}>{placeholder}</label>
     </div>
   )
 }
