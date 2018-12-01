@@ -10,10 +10,9 @@ class CreateEvent extends Component {
   state = {
     title: '',
     brief: '',
-    type: '',
+    type: 'Lecture',
     imageURL: '',
     location: '',
-    fileName: '',
 
     percentage: 0,
   }
@@ -54,12 +53,16 @@ class CreateEvent extends Component {
       () => {
         console.log('upload success')
         console.log(file.name)
-        this.setState({fileName: file.name})
+        storageRef.getDownloadURL().then(url => {
+          this.setState({imageURL: url})
+        })
+
       }
     )
   }
 
   render() {
+    console.log(this.state)
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <h3>Create New Event</h3>
@@ -67,11 +70,6 @@ class CreateEvent extends Component {
         <div className={styles.inputBox}>
           <label className={styles.label} htmlFor="title">Title</label>
           <input className={styles.input} onChange={this.handleChange} id="title" type="text" placeholder='title' />
-        </div>
-
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="imgURL">img URL</label>
-          <input className={styles.input} onChange={this.handleChange} id='imgURL' type="text" placeholder='imgURL' />
         </div>
 
         <div className={styles.inputBox}>
@@ -87,7 +85,7 @@ class CreateEvent extends Component {
 
         <div className={styles.inputBox}>
           <label className={styles.label} htmlFor="type">Event Type</label>
-          <select name='type' id='type'>
+          <select onChange={this.handleChange} name='type' id='type'>
             <option value="Lecture">Lecture</option>
             <option value="Career">Career</option>
             <option value="Party">Party</option>
