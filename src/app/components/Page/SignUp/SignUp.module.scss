@@ -1,0 +1,72 @@
+.Container {
+  position: relative;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  background: rgba(#000, .6);
+}
+
+.Form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media all and (min-width: 480px) {
+  .Form {
+    margin: 0 auto;
+    max-width: 450px;
+    border: 1px red solid;
+  }
+}
+@media all and (max-width: 480px) {
+  .Form {
+    margin: 0 auto;
+    max-width: 250px;
+    border: 1px green solid;
+  }
+}
+
+
+
+// .inputBox {
+//   position: relative;
+//   border: 1px turquoise solid;
+//   margin: 10px;
+// }
+
+// .label {
+//   display: block;
+//   /* position: absolute; */
+//   /* transform: translateY(-10px) */
+//   font-size: 16px;
+//   line-height: 16px;
+//   width: 100%;
+// }
+// .input {
+//   border: none;
+//   font-size: 16px;
+//   padding: 0;
+//   outline: none;
+//   line-height: 19px;
+//   width: 100%;
+// }
+// .input::before {
+//   content: '';
+// }
+

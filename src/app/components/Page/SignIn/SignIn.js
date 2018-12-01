@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import styles from './SignIn.module.css'
 import { connect } from 'react-redux'
 import { signIn } from '../../../store/actions/authActions' //?
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
+
+
 class SignIn extends Component {
   state = {
     email: '',
@@ -20,21 +22,24 @@ class SignIn extends Component {
     const { authError, auth } = this.props
     if (auth.uid) return <Redirect to='/' />
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <h5>Sign In</h5>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="email">Email</label>
-          <input className={styles.input} onChange={this.handleChange} id="email" type="email" placeholder='Email' />
-        </div>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="password">Password</label>
-          <input className={styles.input} onChange={this.handleChange} id="password" type="password" placeholder='Password' />
-        </div>
-        <button>Login</button>
-        <div>
-          { authError ? <p>{authError}</p> : null}
-        </div>
-      </form>
+      <div>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
+          <h5>Sign In</h5>
+          <div className={styles.inputBox}>
+            <label className={styles.label} htmlFor="email">Email</label>
+            <input className={styles.input} onChange={this.handleChange} id="email" type="email" placeholder='Email' />
+          </div>
+          <div className={styles.inputBox}>
+            <label className={styles.label} htmlFor="password">Password</label>
+            <input className={styles.input} onChange={this.handleChange} id="password" type="password" placeholder='Password' />
+          </div>
+          <button>Login</button>
+          <div>
+            { authError ? <p>{authError}</p> : null}
+          </div>
+        </form>
+      </div>
+      
     )
   }
 } 

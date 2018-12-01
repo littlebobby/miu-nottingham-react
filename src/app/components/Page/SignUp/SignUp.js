@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import styles from './SignUp.module.css'
+import styles from './SignUp.module.scss'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signUp } from '../../../store/actions/authActions' //?
+import videomp4 from '../../../assets/videos/bgvideo.mp4';
+import videowebm from '../../../assets/videos/bgvideo.webm';
+import { Input } from 'components';
+
 class SignUp extends Component {
   state = {
     email: '',
@@ -22,29 +26,27 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to='/' />
 
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <h5>Sign Up</h5>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="email">Email</label>
-          <input className={styles.input} onChange={this.handleChange} id="email" type="email" placeholder='Email' />
+      <div className={styles.Container}>
+        <div className={styles.Video}>
+          <video autoPlay muted loop>
+            <source src={videomp4} type="video/mp4" />>
+            <source src={videowebm} type="video/webm" />>
+              Your brower is not supported 
+          </video>
         </div>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="password">Password</label>
-          <input className={styles.input} onChange={this.handleChange} id="password" type="password" placeholder='Password' />
-        </div>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="lastName">Last Name</label>
-          <input className={styles.input} onChange={this.handleChange} id="lastName" type="text" placeholder='Last Name' />
-        </div>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="firstName">First Name</label>
-          <input className={styles.input} onChange={this.handleChange} id="firstName" type="text" placeholder='First Name' />
-        </div>
-        <button>Sign up</button>
-        <div>
-          {authError ? <p>{authError}</p> : null}
-        </div>
-      </form>
+
+        <form className={styles.Form} onSubmit={this.handleSubmit}>
+          <h5>Sign Up</h5>
+          <Input type='email' onChange={this.handleChange} id='email' placeholder='email'/>
+          <Input type='password' onChange={this.handleChange} id='password' placeholder='password' />
+          <Input type='text' onChange={this.handleChange} id='firstName' placeholder='First name' />
+          <Input type='text' onChange={this.handleChange} id='lastName' placeholder='Last name' />
+          <button>Sign up</button>
+          <div>
+            {authError ? <p>{authError}</p> : null}
+          </div>
+        </form>
+      </div>
     )
   }
 } 
