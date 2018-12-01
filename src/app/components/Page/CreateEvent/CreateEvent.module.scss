@@ -1,0 +1,40 @@
+// .inputBox {
+//   position: relative;
+//   border: 1px turquoise solid;
+//   margin: 10px;
+// }
+
+// .label {
+//   display: block;
+//   /* position: absolute; */
+//   /* transform: translateY(-10px) */
+//   font-size: 16px;
+//   line-height: 16px;
+//   width: 100%;
+// }
+// .input {
+//   border: none;
+//   font-size: 16px;
+//   padding: 0;
+//   outline: none;
+//   line-height: 19px;
+//   width: 100%;
+// }
+// .input::before {
+//   content: '';
+// }
+
+// @media all and (min-width: 480px) {
+//   .form {
+//     margin: 0 auto;
+//     max-width: 450px;
+//     border: 1px red solid;
+//   }
+// }
+// @media all and (max-width: 480px) {
+//   .form {
+//     margin: 0 auto;
+//     max-width: 250px;
+//     border: 1px green solid;
+//   }
+// }
