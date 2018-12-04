@@ -8,8 +8,14 @@
   cursor: pointer;
   position: absolute;
   height: 60px;
-  top: calc(50% - 60px);
+  top: 50%;
+  transform: translateY(-60%); // why its not 50%
   transition: background-color 0.6s ease;
+  // background: rgba(#000000, .1);
+
+  @media only screen and (max-width: 600px) {
+    height: 35px;
+  }
 }
 .prev {
   left: 0;
