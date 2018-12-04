@@ -1,0 +1,46 @@
+@import '../../styles/colors';
+
+.container {
+  background: #000;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 2rem 0;
+
+  div {
+    
+    height: 21px;
+    width: 25%;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 3px;
+      width: 100%;
+      display: inline-block;
+      background: gray;
+      background-image: black;
+      opacity: 0;
+    }
+  }
+}
+
+.Highlighted {
+  // for text
+  span {
+    background-image: linear-gradient(to right, $color-yellow-secondary, $color-yellow-primary);
+    background-clip: text;
+    color: transparent;
+    transition: all .4s ease-in-out;
+  }
+  // for underline 
+  &::after {
+      background-image: linear-gradient(to right, $color-yellow-secondary, $color-yellow-primary) !important;
+      opacity: 1 !important; // this is a workaround, as background-image is not a transition property
+      transition: all .4s ease-in-out;
+  }
+}
