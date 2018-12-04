@@ -4,6 +4,7 @@ export { default as Nav } from './Nav/Nav';
 export { default as Comment } from './Comment/Comment';
 export { default as Input } from './Input/Input';
 export { default as Switcher } from './Switcher/Switcher';
+export { default as Slideshow } from './Slideshow/Slideshow';
 
 
 // FIXME: cahnge joined user group into seperate component
