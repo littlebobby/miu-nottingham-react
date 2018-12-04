@@ -3,6 +3,7 @@ export { default as Icon } from './Icon/Icon';
 export { default as Nav } from './Nav/Nav';
 export { default as Comment } from './Comment/Comment';
 export { default as Input } from './Input/Input';
+export { default as Switcher } from './Switcher/Switcher';
 
 
 // FIXME: cahnge joined user group into seperate component

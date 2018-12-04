@@ -28,9 +28,9 @@ class SignUp extends Component {
     return (
       <div className={styles.Container}>
         <div className={styles.Video}>
-          <video autoPlay muted loop>
-            <source src={videomp4} type="video/mp4" />>
-            <source src={videowebm} type="video/webm" />>
+          <video autoPlay playsInline muted loop>
+            <source src={videomp4} type="video/mp4" />
+            <source src={videowebm} type="video/webm" />
               Your brower is not supported 
           </video>
         </div>
