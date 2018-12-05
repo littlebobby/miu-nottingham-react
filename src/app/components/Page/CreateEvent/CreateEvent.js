@@ -125,9 +125,9 @@ class CreateEvent extends Component {
           <div className={styles.Type}>
             <label htmlFor="type">Event Type</label>
             <select onChange={this.handleChange} name='type' id='type'>
-              <option value="Lecture">Lecture</option>
-              <option value="Career">Career</option>
-              <option value="Party">Party</option>
+              <option value="lecture">Lecture</option>
+              <option value="career">Career</option>
+              <option value="party">Party</option>
             </select>
           </div>
           

@@ -15,7 +15,7 @@ class EventList extends Component {
         {events && events.map(i => {
             console.log(i)
             
-            return this.props.eventType === i.type || this.props.eventType === 'all' ? 
+            return this.props.eventType === i.info.type || this.props.eventType === 'all' ? 
              (
               <EventBrief 
                 key={i.id}
