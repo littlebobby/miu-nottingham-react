@@ -1,0 +1,34 @@
+
+.container {
+  height: calc(100vh - 5rem); // 5rem is the nav height
+  width: 100vw;
+  background-color: black;
+  position: relative;
+  
+
+  form {
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  button {
+    border-radius: 20px;
+    padding: 1.5rem 4rem;
+    background: rgba(#ddd, .5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    transition: all .5s;
+    font-weight: 600;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+}
