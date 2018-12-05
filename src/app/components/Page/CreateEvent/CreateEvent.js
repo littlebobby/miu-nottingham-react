@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createEvent } from '../../../store/actions/eventActions'; //?
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Input } from 'components'
 
 import firebase from '../../../../config/fbConfig';
 
@@ -78,75 +79,66 @@ class CreateEvent extends Component {
   render() {
     console.log(this.state)
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <h3>Create New Event</h3>
-        <h4>Info</h4>
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="title">Title</label>
-          <input className={styles.input} onChange={this.handleChange} id="title" type="text" placeholder='Event name' />
-        </div>
+      <div className={styles.container}>
+        <form onSubmit={this.handleSubmit}>
+          <h3>Create New Event</h3>
+          <h4>Info</h4>
+          <Input type='text' onChange={this.handleChange} id='title' placeholder='Title'/>
 
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="fileButton">File</label>
-          <progress value={this.state.percentage} max='100' id='uploader'>0%</progress>
-          <input onChange={this.handleFileUpload} id="fileButton" type="file" />
-        </div>
+          <div className={styles.Uploader}>
+            <label className={styles.label} htmlFor="fileButton">File</label>
+            <progress className={styles.Progress} value={this.state.percentage} max='100' id='uploader'>0%</progress>
+            <input onChange={this.handleFileUpload} id="fileButton" type="file" />
+          </div>
 
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="location">Location</label>
-          <input className={styles.input} onChange={this.handleChange} id='location' type="text" placeholder='Location' />
-        </div>
+          <Input type='text' onChange={this.handleChange} id='location' placeholder='Location'/>
 
+          <div className={styles.Time} >
+            <label htmlFor="startTime">Starts</label>
+            <DatePicker
+              id='startTime'
+              selected={this.state.startTime}
+              onChange={this.handleStartTimeChange}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              timeCaption="time"
+              />
+          </div>
 
-        <div >
-          <label htmlFor="startTime">Starts</label>
-          <DatePicker
-            id='startTime'
-            selected={this.state.startTime}
-            onChange={this.handleStartTimeChange}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="MMMM d, yyyy h:mm aa"
-            timeCaption="time"
-            />
-        </div>
-
-        <div >
-          <label htmlFor="endTime">Ends</label>
-          <DatePicker
-            id='endTime'
-            selected={this.state.endTime}
-            onChange={this.handleEndTimeChange}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="MMMM d, yyyy h:mm aa"
-            timeCaption="time"
-            />
-        </div>
+          <div className={styles.Time} >
+            <label htmlFor="endTime">Ends</label>
+            <DatePicker
+              id='endTime'
+              selected={this.state.endTime}
+              onChange={this.handleEndTimeChange}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              timeCaption="time"
+              />
+          </div>
 
 
+          <div className={styles.Type}>
+            <label htmlFor="type">Event Type</label>
+            <select onChange={this.handleChange} name='type' id='type'>
+              <option value="Lecture">Lecture</option>
+              <option value="Career">Career</option>
+              <option value="Party">Party</option>
+            </select>
+          </div>
+          
+          <div className={styles.Brief}>
+            <label htmlFor="brief">Brief</label>
+            <textarea onChange={this.handleChange} id="brief" placeholder='brief' />
+          </div>
 
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="type">Event Type</label>
-          <select onChange={this.handleChange} name='type' id='type'>
-            <option value="Lecture">Lecture</option>
-            <option value="Career">Career</option>
-            <option value="Party">Party</option>
-          </select>
-        </div>
-        
-        <div className={styles.inputBox}>
-          <label className={styles.label} htmlFor="brief">Brief</label>
-          <textarea className={styles.input} onChange={this.handleChange} id="brief" placeholder='brief' />
-        </div>
-
-        
-
-        
-        <button>Create</button>
-      </form>
+          <button>Create</button>
+        </form>
+      </div>
     )
   }
 } 
